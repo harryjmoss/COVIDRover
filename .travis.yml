@@ -2,9 +2,9 @@ language: python
 jobs:
   include:
     - name: "Python on Xenial Linux"
-      - os: linux
-      - dist: xenial
-      - python:
+      os: linux
+      dist: xenial
+      python:
         - "3.6"
         - "3.7"
         - "3.8"
