@@ -6,6 +6,11 @@ jobs:
       dist: xenial
       python:
       - 3.7
+      before install:
+        - python --version
+        - pip install -U pip
+        - pip install pytest
+        - pip install codecov
     - name: "Python 3.7.7 on macOS"
       os: osx
       osx_image: xcode11.2  # Python 3.7.7 running on macOS 10.14.6
@@ -13,6 +18,7 @@ jobs:
       before_install:
         - python3 --version
         - pip3 install -U pip
+        - pip3 install pytest
         - pip3 install codecov
 install: pip3 install -r requirements.txt 
-script: python3 tests.py 
+script: pytest
