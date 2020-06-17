@@ -1,0 +1,18 @@
+language: python   
+jobs:
+  include:
+    - name: "Python on Xenial Linux"
+      os: linux
+      dist: xenial
+      python:
+      - 3.7
+    - name: "Python 3.7.7 on macOS"
+      os: osx
+      osx_image: xcode11.2  # Python 3.7.7 running on macOS 10.14.6
+      language: shell
+      before_install:
+        - python3 --version
+        - pip3 install -U pip
+        - pip3 install codecov
+install: pip3 install -r requirements.txt 
+script: python3 tests.py 
