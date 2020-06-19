@@ -9,7 +9,7 @@ jobs:
       before install:
         - python --version
         - pip install -U pip
-        - pip install pytest>=5.4.3
+        - pip install pytest>= 5.4.3
         - pip install pytest-cov
         - pip install codecov
     - name: "Python 3.7.7 on macOS"
