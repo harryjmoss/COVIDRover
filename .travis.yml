@@ -9,7 +9,7 @@ jobs:
       before install:
         - python --version
         - pip install -U pip
-        - pip install pytest
+        - pip install pytest pytest-cov
         - pip install codecov
     - name: "Python 3.7.7 on macOS"
       os: osx
@@ -18,7 +18,7 @@ jobs:
       before_install:
         - python3 --version
         - pip3 install -U pip
-        - pip3 install pytest
+        - pip3 install pytest pytest-cov
         - pip3 install codecov
 install: pip3 install -r requirements.txt # pip3 is OS independent
 script: pytest --cov=covidrover tests/
