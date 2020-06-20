@@ -1,6 +1,7 @@
 # test_dataprep
 import pandas as pd
-import geopandas as gpd
+import numpy as np
+import geopandas
 import os
 import requests
 from covidrover.dataprep import get_data
@@ -29,12 +30,17 @@ def test_generate_dataframe_from_csv():
                         "Change in cumulative cases","Cumulative lab-confirmed cases rate"]
     assert df.columns.tolist()  == expected_columns
 
-
 def test_file_exists_areadeprivation():
     testfile="data/deprivation_index_by_area.csv"
     assert file_exists(testfile)
 
-def test_dataframe_cleaning():
+def test_get_latest_dataframes():
+    # use deaths url, file is much smaller
+    deaths_url="https://coronavirus.data.gov.uk/downloads/csv/coronavirus-cases_latest.csv"
+    test_dataframe=get_data.get_latest_dataframes(deaths_url)
+    assert not test_dataframe.empty
+
+def test_clean_deprivation_area_df():
     inputcolumns=['http://opendatacommunities.org/def/ontology/geography/refArea',
         'Reference area',
         'a. Index of Multiple Deprivation (IMD)',
@@ -56,3 +62,8 @@ def test_dataframe_cleaning():
     cleanedcolumns=get_data.clean_deprivation_area_df(testdataframe).columns.to_list()
     assert cleanedcolumns == expectedcolumns
 
+def test_get_geo_data():
+
+    test_geo_file='data/geofiles/test_geo.shp'
+    test_geo_df=get_data.get_geo_data(test_geo_file)
+    assert isinstance(test_geo_df,geopandas.geodataframe.GeoDataFrame)

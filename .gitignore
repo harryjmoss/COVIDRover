@@ -5,3 +5,5 @@ data/coronavirus*
 *.pyc
 *.geojson
 *.html
+notebooks/.ipynb_checkpoints/
+data/geofiles/geofile.*

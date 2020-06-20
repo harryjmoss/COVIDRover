@@ -1,0 +1,11 @@
+[report]
+exclude_lines =
+	pragma: no cover
+	if __name__ == __main__:
+[run]
+omit =
+	covidrover/__main__.py
+	covidrover/run.py
+	covidrover/setup.py
+	covidrover/__init__.py
+	covidrover*/__init__.py
