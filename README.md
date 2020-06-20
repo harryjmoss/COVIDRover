@@ -1,8 +1,7 @@
 [![Build Status](https://travis-ci.org/harryjmoss/COVIDRover.svg?branch=master)](https://travis-ci.org/harryjmoss/COVIDRover)
 # COVID-19 data analysis tool
 
-A Python tool to query the latest available statistics on COVID-19 cases in the UK and perform analysis.
-
+A Python tool to query the latest available statistics on COVID-19 cases in the UK and perform analysis based on geographical and deprivation information.
 ### Data sources
 - COVID deaths and cases data is taken from https://coronavirus.data.gov.uk/ and is licensed under the [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/)
 - Deprivation index data is taken from the UK Ministry of Housing, Communities & Local Government and is available via [https://opendatacommunities.org/](https://opendatacommunities.org/resource?uri=http%3A%2F%2Fopendatacommunities.org%2Fdata%2Fsocietal-wellbeing%2Fimd2019%2Findices) under the Open Government Licence v3.0
