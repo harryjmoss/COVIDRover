@@ -1,5 +1,6 @@
 from covidrover.dataprep import get_data
 from covidrover.analysis import analyse_data
+from covidrover.plotting import plot_data
 from covidrover import setup
 def main():
     # This file is retrieved in setup.py and saved to the data directory if it does not already exist
@@ -10,9 +11,10 @@ def main():
     deaths_url = "https://coronavirus.data.gov.uk/downloads/csv/coronavirus-deaths_latest.csv"
    
     map_df, cases, deaths, areaIMD = get_data.prepare_data(geomap_path,cases_url,deaths_url)
-    analyse_data.analyse(map_df,cases,deaths,areaIMD)
     
+    stats_maps,stats_maps_json = analyse_data.analyse(map_df,cases,deaths,areaIMD)
     
+    plot_data.get_plots(stats_maps,stats_maps_json)
     print("Run!")
 
 if __name__ == '__main__':

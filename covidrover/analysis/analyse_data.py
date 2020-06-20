@@ -31,7 +31,6 @@ def convert_to_json_out(geodf):
     json_info = json.loads(geodf.to_json())
     #Convert to a string-like object
     json_out = json.dumps(json_info)
-    print(type(json_out))
     return json_out
 
 def analyse(mapdata,cases,deaths,area_imd):
