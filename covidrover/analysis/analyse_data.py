@@ -26,11 +26,12 @@ def get_latest_data(merged_data):
                         'RatePer100k','IMD']
     return latestcases
 
-def convert_to_json(geodf):
+def convert_to_json_out(geodf):
     # Read geopandas dataframe in to json
     json_info = json.loads(geodf.to_json())
     #Convert to a string-like object
     json_out = json.dumps(json_info)
+    print(type(json_out))
     return json_out
 
 def analyse(mapdata,cases,deaths,area_imd):
@@ -42,7 +43,7 @@ def analyse(mapdata,cases,deaths,area_imd):
     # Merge the cases and IMD data with geographic data 
     
     cases_imd_maps=merge_by_area(mapdata,latestcases_imd)
-    cases_imd_maps_json = convert_to_json(cases_imd_maps)
+    cases_imd_maps_json = convert_to_json_out(cases_imd_maps)
 
     return(cases_imd_maps,cases_imd_maps_json)
     

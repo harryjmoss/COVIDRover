@@ -1,9 +1,8 @@
 import pandas as pd
 import numpy as np
-import os
 from covidrover.analysis import analyse_data
 
-def test_merging_by_areacode():
+def test_merge_by_area():
     covidInfoCols=['Area name', 'Area code', 'Area type',
      'Specimen date','Daily lab-confirmed cases',
       'Previously reported daily cases','Change in daily cases',
@@ -16,11 +15,26 @@ def test_merging_by_areacode():
     merged=analyse_data.merge_by_area(covidInfo,areaIMDCols)
     assert len(merged.columns) == 12
 
-def test_get_latest_date():
+def test_get_latest_data():
     csv_dataframe = pd.read_csv('data/csvText.csv') # test csv in data/
     latestdate='2020-06-17'
     csv_dataframe=csv_dataframe[csv_dataframe['Specimen date']==csv_dataframe['Specimen date'].max()]
     csv_dataframe=csv_dataframe.dropna(axis=1,how='all')
     csv_dataframe.index=np.arange(0,len(csv_dataframe))
     assert csv_dataframe['Specimen date'].all()==latestdate
+
+def test_convert_to_json():
+    test_array = np.array([["geometry",
+        'Hartlepool','2020-06-19', 352.0, 377.5,
+        35.037],
+       ["geometry",
+        'Middlesbrough','2020-06-19', 695.0, 494.5,
+        40.46],
+       ["geometry",
+        'Redcar and Cleveland', '2020-06-19', 429.0,
+        313.8, 29.791999999999998]]).tolist()
+    test_dataframe=pd.DataFrame(test_array)
+    test_jsoninfo = analyse_data.convert_to_json_out(test_dataframe)
+    assert isinstance(test_jsoninfo,str)
+
 
