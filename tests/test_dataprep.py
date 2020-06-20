@@ -1,5 +1,6 @@
 # test_dataprep
 import pandas as pd
+import geopandas as gpd
 import os
 import requests
 from covidrover.dataprep import get_data
@@ -28,6 +29,7 @@ def test_generate_dataframe_from_csv():
                         "Change in cumulative cases","Cumulative lab-confirmed cases rate"]
     assert df.columns.tolist()  == expected_columns
 
+
 def test_file_exists_areadeprivation():
     testfile="data/deprivation_index_by_area.csv"
     assert file_exists(testfile)
@@ -53,3 +55,4 @@ def test_dataframe_cleaning():
     expectedcolumns = ['Area code','IMD']
     cleanedcolumns=get_data.clean_deprivation_area_df(testdataframe).columns.to_list()
     assert cleanedcolumns == expectedcolumns
+
