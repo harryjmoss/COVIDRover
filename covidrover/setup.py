@@ -11,8 +11,8 @@ def get_geomap_path():
         print("Getting geographical information...")
         geo_url="https://opendata.arcgis.com/datasets/a8531598f29f44e7ad455abb6bf59c60_0.geojson"
         geo_dataframe=get_geo_dataframe_from_url(geo_url)
-        geo_dataframe=geo_dataframe[['lad19cd','lad19nm','geometry']]
-        geo_dataframe.columns=['Area code','Area','geometry']  
+        geo_dataframe=geo_dataframe[['lad19cd','geometry']]
+        geo_dataframe.columns=['Area code','geometry']  
         geo_dataframe.to_file(geopath, driver='GeoJSON')
     return geopath
 if __name__ == '__main__':
