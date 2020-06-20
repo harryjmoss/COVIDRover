@@ -11,7 +11,7 @@ def main():
    
     map_df, cases, deaths, areaIMD = get_data.prepare_data(geomap_path,cases_url,deaths_url)
     analyse_data.analyse(map_df,cases,deaths,areaIMD)
-
+    
     
     print("Run!")
 
