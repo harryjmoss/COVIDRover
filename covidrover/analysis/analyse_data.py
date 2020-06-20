@@ -40,11 +40,7 @@ def analyse(mapdata,cases,deaths,area_imd):
     cases_area_imd=merge_by_area(cases,area_imd)
     # Get the latest available UK Gov COVID stats for England
     latestcases_imd=get_latest_data(cases_area_imd)
-    # Merge the cases and IMD data with geographic data 
-    
+    # Merge the cases and IMD data with geographic data  
     cases_imd_maps=merge_by_area(mapdata,latestcases_imd)
     cases_imd_maps_json = convert_to_json_out(cases_imd_maps)
-
     return(cases_imd_maps,cases_imd_maps_json)
-    
-

@@ -15,7 +15,7 @@ def test_merge_by_area():
     merged=analyse_data.merge_by_area(covidInfo,areaIMDCols)
     assert len(merged.columns) == 12
 
-def test_get_latest_data():
+def test_get_latest_date():
     csv_dataframe = pd.read_csv('data/csvText.csv') # test csv in data/
     latestdate='2020-06-17'
     csv_dataframe=csv_dataframe[csv_dataframe['Specimen date']==csv_dataframe['Specimen date'].max()]
@@ -23,7 +23,25 @@ def test_get_latest_data():
     csv_dataframe.index=np.arange(0,len(csv_dataframe))
     assert csv_dataframe['Specimen date'].all()==latestdate
 
-def test_convert_to_json():
+def test_get_latest_data():
+    test_columns=['Area name','Area code',
+            'Area type','Specimen date',
+            'Daily lab-confirmed cases',
+            'Cumulative lab-confirmed cases',
+            'Cumulative lab-confirmed cases rate',
+            'IMD']
+    test_list=[['Hart','E07000089',
+            'Lower tier local authority','2020-06-19',
+            np.nan,186,193.2,5.544]]
+    test_dataframe=pd.DataFrame(test_list,columns=test_columns)
+    test_new_dataframe=analyse_data.get_latest_data(test_dataframe)
+    expected_columns=['Area name', 'Area code', 
+                    'Date','Cases',
+                    'RatePer100k','IMD']
+    assert test_new_dataframe.columns.tolist() == expected_columns
+
+
+def test_convert_to_json_out():
     test_array = np.array([["geometry",
         'Hartlepool','2020-06-19', 352.0, 377.5,
         35.037],
