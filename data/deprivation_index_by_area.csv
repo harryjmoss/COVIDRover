@@ -1,0 +1,318 @@
+http://opendatacommunities.org/def/ontology/geography/refArea,Reference area,a. Index of Multiple Deprivation (IMD),b. Income Deprivation Domain,c. Employment Deprivation Domain,"d. Education, Skills and Training Domain",e. Health Deprivation and Disability Domain,f. Crime Domain,g. Barriers to Housing and Services Domain,h. Living Environment Deprivation Domain,i. Income Deprivation Affecting Children Index (IDACI),j. Income Deprivation Affecting Older People Index (IDAOPI)
+http://opendatacommunities.org/id/geography/administration/ua/E06000022,Bath and North East Somerset,11.745,0.079,0.063,14.043,-0.668,-0.279,16.763,13.986,0.104,0.096
+http://opendatacommunities.org/id/geography/administration/ua/E06000055,Bedford,18.932,0.114,0.09,19.05,-0.119,-0.116,24.837,19.761,0.151,0.115
+http://opendatacommunities.org/id/geography/administration/ua/E06000008,Blackburn with Darwen,36.013,0.212,0.162,34.512,1.049,0.409,12.312,32.083,0.228,0.238
+http://opendatacommunities.org/id/geography/administration/ua/E06000009,Blackpool,45.039,0.247,0.209,38.502,1.643,0.815,11.804,39.531,0.307,0.231
+http://opendatacommunities.org/id/geography/administration/ua/E06000058,"Bournemouth, Christchurch and Poole",18.173,0.112,0.091,19.384,-0.039,-0.108,21.138,17.888,0.147,0.13
+http://opendatacommunities.org/id/geography/administration/ua/E06000036,Bracknell Forest,10.241,0.068,0.053,17.048,-0.907,-0.856,25.882,4.595,0.089,0.099
+http://opendatacommunities.org/id/geography/administration/ua/E06000043,Brighton and Hove,20.761,0.123,0.094,18.639,0.097,-0.066,23.287,24.849,0.153,0.187
+http://opendatacommunities.org/id/geography/administration/ua/E06000023,"Bristol, City of",26.363,0.141,0.102,27.137,0.322,0.756,23.624,22.596,0.206,0.175
+http://opendatacommunities.org/id/geography/administration/ua/E06000056,Central Bedfordshire,12.152,0.077,0.059,17.131,-0.712,-0.235,20.636,14.341,0.114,0.087
+http://opendatacommunities.org/id/geography/administration/ua/E06000049,Cheshire East,14.475,0.083,0.075,14.428,-0.186,-0.382,19.367,17.689,0.107,0.086
+http://opendatacommunities.org/id/geography/administration/ua/E06000050,Cheshire West and Chester,18.083,0.108,0.095,18.227,0.089,-0.284,16.288,18.849,0.145,0.113
+http://opendatacommunities.org/id/geography/administration/ua/E06000052,Cornwall,23.072,0.13,0.108,19.031,0.054,-0.713,24.726,39.931,0.164,0.138
+http://opendatacommunities.org/id/geography/administration/ua/E06000047,County Durham,26.793,0.165,0.143,24.986,0.71,0.26,14.094,5.681,0.222,0.17
+http://opendatacommunities.org/id/geography/administration/ua/E06000005,Darlington,25.657,0.153,0.128,27.402,0.532,0.558,11.942,8.8,0.203,0.152
+http://opendatacommunities.org/id/geography/administration/ua/E06000015,Derby,26.323,0.158,0.115,33.417,0.526,-0.105,19.864,21.078,0.211,0.168
+http://opendatacommunities.org/id/geography/administration/ua/E06000059,Dorset,15.735,0.088,0.08,18.456,-0.346,-0.719,25.219,18.651,0.121,0.087
+http://opendatacommunities.org/id/geography/administration/ua/E06000011,East Riding of Yorkshire,15.605,0.096,0.085,17.434,-0.39,-0.542,19.842,17.541,0.118,0.108
+http://opendatacommunities.org/id/geography/administration/ua/E06000006,Halton,32.325,0.185,0.158,29.565,0.93,0.272,16.214,19.914,0.239,0.181
+http://opendatacommunities.org/id/geography/administration/ua/E06000001,Hartlepool,35.037,0.228,0.185,30.255,0.869,0.566,14.242,6.943,0.283,0.228
+http://opendatacommunities.org/id/geography/administration/ua/E06000019,"Herefordshire, County of",18.89,0.098,0.08,20.465,-0.312,-0.612,26.817,34.71,0.124,0.109
+http://opendatacommunities.org/id/geography/administration/ua/E06000046,Isle of Wight,23.294,0.138,0.124,26.09,0.084,-0.2,18.731,28.693,0.18,0.132
+http://opendatacommunities.org/id/geography/administration/ua/E06000053,Isles of Scilly,12.005,0.029,0.019,9.671,-2.625,-0.778,20.576,66.667,0.032,0.05
+http://opendatacommunities.org/id/geography/administration/ua/E06000010,"Kingston upon Hull, City of",40.564,0.227,0.166,41.672,0.853,0.841,21.108,34.324,0.298,0.257
+http://opendatacommunities.org/id/geography/administration/ua/E06000016,Leicester,30.877,0.196,0.119,37.277,0.594,0.484,16.433,25.981,0.242,0.298
+http://opendatacommunities.org/id/geography/administration/ua/E06000032,Luton,25.908,0.155,0.1,27.432,0.294,0.392,30.233,22.093,0.196,0.198
+http://opendatacommunities.org/id/geography/administration/ua/E06000035,Medway,23.936,0.134,0.105,28.026,0.075,0.555,19.252,25.313,0.189,0.133
+http://opendatacommunities.org/id/geography/administration/ua/E06000002,Middlesbrough,40.46,0.251,0.191,38.85,1.194,0.701,14.183,12.929,0.327,0.233
+http://opendatacommunities.org/id/geography/administration/ua/E06000042,Milton Keynes,17.98,0.111,0.078,19.205,-0.158,-0.137,30.625,10.265,0.15,0.131
+http://opendatacommunities.org/id/geography/administration/ua/E06000012,North East Lincolnshire,31.335,0.19,0.145,35.861,0.38,0.484,13.386,26.35,0.274,0.17
+http://opendatacommunities.org/id/geography/administration/ua/E06000013,North Lincolnshire,22.096,0.133,0.109,28.419,0.233,0.111,14.96,15.331,0.183,0.135
+http://opendatacommunities.org/id/geography/administration/ua/E06000024,North Somerset,15.825,0.101,0.09,16.945,-0.263,-0.164,18.52,9.682,0.124,0.104
+http://opendatacommunities.org/id/geography/administration/ua/E06000057,Northumberland,22.079,0.126,0.118,22.596,0.189,-0.139,21.846,10.01,0.174,0.115
+http://opendatacommunities.org/id/geography/administration/ua/E06000018,Nottingham,34.891,0.199,0.136,37.51,0.861,0.438,23.586,29.791,0.298,0.238
+http://opendatacommunities.org/id/geography/administration/ua/E06000031,Peterborough,27.821,0.156,0.112,34.571,0.413,0.523,26.749,17.397,0.208,0.169
+http://opendatacommunities.org/id/geography/administration/ua/E06000026,Plymouth,26.619,0.148,0.128,25.623,0.666,-0.051,18.139,25.786,0.203,0.153
+http://opendatacommunities.org/id/geography/administration/ua/E06000044,Portsmouth,26.899,0.134,0.09,27.706,0.27,0.652,21.275,43.313,0.202,0.171
+http://opendatacommunities.org/id/geography/administration/ua/E06000038,Reading,19.619,0.114,0.074,20.993,-0.034,0.092,27.441,22.108,0.16,0.173
+http://opendatacommunities.org/id/geography/administration/ua/E06000003,Redcar and Cleveland,29.792,0.186,0.165,27.768,0.79,0.138,14.139,7.793,0.256,0.168
+http://opendatacommunities.org/id/geography/administration/ua/E06000017,Rutland,8.381,0.056,0.049,7.826,-1.048,-1.205,23.583,15.669,0.072,0.064
+http://opendatacommunities.org/id/geography/administration/ua/E06000051,Shropshire,17.153,0.096,0.078,17.851,-0.348,-0.576,25.498,28.49,0.12,0.113
+http://opendatacommunities.org/id/geography/administration/ua/E06000039,Slough,22.965,0.126,0.08,19.963,0.147,0.412,36.28,22.387,0.147,0.214
+http://opendatacommunities.org/id/geography/administration/ua/E06000025,South Gloucestershire,11.66,0.074,0.062,18.385,-0.813,-0.222,19.871,9.496,0.104,0.087
+http://opendatacommunities.org/id/geography/administration/ua/E06000045,Southampton,26.876,0.135,0.093,26.939,0.541,0.881,19.667,32.666,0.205,0.173
+http://opendatacommunities.org/id/geography/administration/ua/E06000033,Southend-on-Sea,22.375,0.144,0.111,25.052,0.062,0.203,17.644,17.07,0.192,0.153
+http://opendatacommunities.org/id/geography/administration/ua/E06000004,Stockton-on-Tees,25.79,0.164,0.135,24.786,0.684,-0.111,15.87,6.007,0.209,0.16
+http://opendatacommunities.org/id/geography/administration/ua/E06000021,Stoke-on-Trent,34.504,0.19,0.152,38.935,1.037,0.504,15.555,23.446,0.257,0.184
+http://opendatacommunities.org/id/geography/administration/ua/E06000030,Swindon,18.622,0.109,0.082,24.621,0.007,0.209,19.022,14.221,0.149,0.131
+http://opendatacommunities.org/id/geography/administration/ua/E06000020,Telford and Wrekin,24.988,0.156,0.12,27.926,0.446,0.19,19.797,9.424,0.213,0.166
+http://opendatacommunities.org/id/geography/administration/ua/E06000034,Thurrock,20.928,0.13,0.088,30.002,-0.234,0.284,24.22,16.481,0.186,0.148
+http://opendatacommunities.org/id/geography/administration/ua/E06000027,Torbay,28.104,0.174,0.15,25.498,0.504,0.028,20.512,21.199,0.219,0.174
+http://opendatacommunities.org/id/geography/administration/ua/E06000007,Warrington,18.942,0.109,0.097,18.671,0.278,-0.137,17.152,17.006,0.132,0.121
+http://opendatacommunities.org/id/geography/administration/ua/E06000037,West Berkshire,9.952,0.064,0.053,13.476,-0.888,-0.665,21.001,15.225,0.087,0.076
+http://opendatacommunities.org/id/geography/administration/ua/E06000054,Wiltshire,13.447,0.078,0.065,16.99,-0.587,-0.532,24.622,17.66,0.102,0.087
+http://opendatacommunities.org/id/geography/administration/ua/E06000040,Windsor and Maidenhead,8.376,0.058,0.046,9.133,-1.033,-0.478,18.834,14.079,0.067,0.079
+http://opendatacommunities.org/id/geography/administration/ua/E06000041,Wokingham,5.846,0.044,0.038,6.223,-1.545,-0.981,22.581,6.522,0.056,0.056
+http://opendatacommunities.org/id/geography/administration/ua/E06000014,York,11.727,0.072,0.058,15.698,-0.316,-0.816,15.871,18.292,0.1,0.094
+http://opendatacommunities.org/id/geography/administration/nmd/E07000223,Adur,17.594,0.108,0.089,26.162,-0.055,-0.366,17.69,20.329,0.143,0.118
+http://opendatacommunities.org/id/geography/administration/nmd/E07000026,Allerdale,22.938,0.121,0.113,27.873,0.189,-0.586,19.591,26.231,0.151,0.115
+http://opendatacommunities.org/id/geography/administration/nmd/E07000032,Amber Valley,17.97,0.109,0.095,25.729,0.114,-0.748,16.685,16.483,0.15,0.118
+http://opendatacommunities.org/id/geography/administration/nmd/E07000224,Arun,18.638,0.104,0.09,24.399,0.128,-0.236,24.554,14.402,0.136,0.108
+http://opendatacommunities.org/id/geography/administration/nmd/E07000170,Ashfield,26.308,0.152,0.132,35.49,0.542,0.193,16.32,11.255,0.219,0.144
+http://opendatacommunities.org/id/geography/administration/nmd/E07000105,Ashford,18.546,0.11,0.083,22.784,-0.473,0.122,28.454,15.135,0.154,0.114
+http://opendatacommunities.org/id/geography/administration/nmd/E07000004,Aylesbury Vale,11.183,0.067,0.054,15.266,-0.838,-0.567,25.401,11.992,0.089,0.082
+http://opendatacommunities.org/id/geography/administration/nmd/E07000200,Babergh,14.267,0.08,0.066,17.815,-0.693,-0.362,27.848,19.409,0.109,0.088
+http://opendatacommunities.org/id/geography/administration/lonb/E09000002,Barking and Dagenham,32.768,0.194,0.117,25.513,0.204,0.542,46.252,29.103,0.238,0.261
+http://opendatacommunities.org/id/geography/administration/lonb/E09000003,Barnet,16.148,0.111,0.073,7.83,-1.074,0.082,31.211,24.662,0.126,0.163
+http://opendatacommunities.org/id/geography/administration/md/E08000016,Barnsley,29.933,0.169,0.149,37.029,0.839,0.514,10.589,8.384,0.225,0.163
+http://opendatacommunities.org/id/geography/administration/nmd/E07000027,Barrow-in-Furness,31.117,0.159,0.152,26.498,1.251,-0.431,7.484,34.96,0.199,0.147
+http://opendatacommunities.org/id/geography/administration/nmd/E07000066,Basildon,23.243,0.138,0.102,32.304,-0.092,0.41,24.425,10.265,0.197,0.146
+http://opendatacommunities.org/id/geography/administration/nmd/E07000084,Basingstoke and Deane,12.823,0.071,0.059,16.648,-0.52,-0.149,23.848,11.394,0.099,0.083
+http://opendatacommunities.org/id/geography/administration/nmd/E07000171,Bassetlaw,22.588,0.122,0.114,27.32,0.419,0.002,20.126,14.867,0.164,0.118
+http://opendatacommunities.org/id/geography/administration/lonb/E09000004,Bexley,16.273,0.106,0.077,18.331,-0.561,-0.13,25.879,19.754,0.16,0.109
+http://opendatacommunities.org/id/geography/administration/md/E08000025,Birmingham,38.067,0.222,0.153,32.085,0.67,0.335,31.628,40.841,0.276,0.258
+http://opendatacommunities.org/id/geography/administration/nmd/E07000129,Blaby,10.629,0.069,0.059,16.8,-0.497,-0.255,13.26,11.911,0.088,0.089
+http://opendatacommunities.org/id/geography/administration/nmd/E07000033,Bolsover,25.047,0.147,0.132,35.813,0.634,-0.509,14.936,14.062,0.204,0.146
+http://opendatacommunities.org/id/geography/administration/md/E08000001,Bolton,30.691,0.186,0.143,26.349,0.589,0.71,14.162,25.702,0.219,0.191
+http://opendatacommunities.org/id/geography/administration/nmd/E07000136,Boston,22.967,0.128,0.101,42.053,0.083,-0.541,20.896,21.222,0.161,0.15
+http://opendatacommunities.org/id/geography/administration/md/E08000032,Bradford,34.666,0.189,0.137,37.34,0.632,0.919,16.485,36.543,0.225,0.208
+http://opendatacommunities.org/id/geography/administration/nmd/E07000067,Braintree,14.723,0.092,0.075,21.593,-0.382,-0.29,20.727,13.819,0.122,0.112
+http://opendatacommunities.org/id/geography/administration/nmd/E07000143,Breckland,19.614,0.1,0.086,33.049,-0.038,-0.586,25.799,18.319,0.129,0.109
+http://opendatacommunities.org/id/geography/administration/lonb/E09000005,Brent,25.558,0.155,0.097,15.223,-0.453,0.428,42.783,28.694,0.182,0.258
+http://opendatacommunities.org/id/geography/administration/nmd/E07000068,Brentwood,10.007,0.064,0.051,12.123,-1.059,-0.061,22.327,9.72,0.089,0.08
+http://opendatacommunities.org/id/geography/administration/nmd/E07000144,Broadland,11.817,0.072,0.069,16.17,-0.533,-1.059,21.599,15.325,0.086,0.083
+http://opendatacommunities.org/id/geography/administration/lonb/E09000006,Bromley,14.163,0.091,0.068,10.551,-0.908,-0.038,27.839,18.37,0.131,0.101
+http://opendatacommunities.org/id/geography/administration/nmd/E07000234,Bromsgrove,11.697,0.073,0.064,11.127,-0.481,-0.148,19.198,12.136,0.095,0.082
+http://opendatacommunities.org/id/geography/administration/nmd/E07000095,Broxbourne,17.989,0.108,0.077,25.104,-0.693,0.068,30.803,14.492,0.155,0.123
+http://opendatacommunities.org/id/geography/administration/nmd/E07000172,Broxtowe,14.238,0.097,0.084,16.417,-0.286,-0.24,10.671,16.434,0.13,0.109
+http://opendatacommunities.org/id/geography/administration/nmd/E07000117,Burnley,37.793,0.203,0.163,35.598,1.087,0.774,10.585,37.221,0.255,0.186
+http://opendatacommunities.org/id/geography/administration/md/E08000002,Bury,23.682,0.145,0.124,18.863,0.308,0.419,15.122,21.779,0.169,0.145
+http://opendatacommunities.org/id/geography/administration/md/E08000033,Calderdale,26.351,0.149,0.118,21.575,0.264,0.573,12.989,38.369,0.196,0.14
+http://opendatacommunities.org/id/geography/administration/nmd/E07000008,Cambridge,14.855,0.077,0.055,10.254,-0.505,0.151,23.484,28.653,0.122,0.112
+http://opendatacommunities.org/id/geography/administration/lonb/E09000007,Camden,20.131,0.141,0.091,10.523,-0.556,0.325,21.611,33.469,0.193,0.232
+http://opendatacommunities.org/id/geography/administration/nmd/E07000192,Cannock Chase,20.426,0.127,0.105,30.143,0.131,-0.162,15.309,15.205,0.172,0.153
+http://opendatacommunities.org/id/geography/administration/nmd/E07000106,Canterbury,16.798,0.1,0.078,18.271,-0.177,0.091,23.401,11.947,0.147,0.114
+http://opendatacommunities.org/id/geography/administration/nmd/E07000028,Carlisle,21.997,0.116,0.107,28.799,0.335,-0.323,17.95,19.268,0.149,0.114
+http://opendatacommunities.org/id/geography/administration/nmd/E07000069,Castle Point,16.842,0.107,0.087,29.411,-0.311,-0.204,19.567,8.887,0.154,0.117
+http://opendatacommunities.org/id/geography/administration/nmd/E07000130,Charnwood,13.238,0.084,0.066,18.295,-0.451,-0.156,16.539,15.702,0.122,0.102
+http://opendatacommunities.org/id/geography/administration/nmd/E07000070,Chelmsford,12.221,0.077,0.063,13.338,-0.85,-0.227,25.408,12.476,0.108,0.083
+http://opendatacommunities.org/id/geography/administration/nmd/E07000078,Cheltenham,14.26,0.091,0.074,15.212,-0.167,-0.149,17.268,13.496,0.13,0.099
+http://opendatacommunities.org/id/geography/administration/nmd/E07000177,Cherwell,14.41,0.076,0.059,21.259,-0.387,-0.431,24.32,19.905,0.105,0.088
+http://opendatacommunities.org/id/geography/administration/nmd/E07000034,Chesterfield,24.926,0.153,0.136,25.625,0.904,-0.643,15.129,8.632,0.202,0.15
+http://opendatacommunities.org/id/geography/administration/nmd/E07000225,Chichester,14.085,0.079,0.064,14.874,-0.453,-0.622,25.712,24.211,0.107,0.082
+http://opendatacommunities.org/id/geography/administration/nmd/E07000005,Chiltern,6.952,0.053,0.046,5.974,-1.563,-0.761,22.589,6.788,0.061,0.057
+http://opendatacommunities.org/id/geography/administration/nmd/E07000118,Chorley,16.863,0.102,0.091,15.628,0.179,-0.22,14.278,18.205,0.12,0.116
+http://opendatacommunities.org/id/geography/administration/lonb/E09000001,City of London,14.72,0.065,0.052,5.457,-0.686,-1.656,35.656,38.972,0.071,0.083
+http://opendatacommunities.org/id/geography/administration/nmd/E07000071,Colchester,16.778,0.099,0.076,17.449,-0.13,-0.105,26.591,12.819,0.148,0.107
+http://opendatacommunities.org/id/geography/administration/nmd/E07000029,Copeland,25.012,0.13,0.128,29.577,0.737,-0.81,18.845,19.053,0.164,0.121
+http://opendatacommunities.org/id/geography/administration/nmd/E07000150,Corby,25.706,0.136,0.113,39.075,0.61,0.025,24.621,8.937,0.181,0.147
+http://opendatacommunities.org/id/geography/administration/nmd/E07000079,Cotswold,11.061,0.064,0.049,11.074,-0.891,-1.042,28.298,21.075,0.083,0.076
+http://opendatacommunities.org/id/geography/administration/md/E08000026,Coventry,25.613,0.154,0.105,25.238,0.367,0.068,21.224,32.103,0.218,0.19
+http://opendatacommunities.org/id/geography/administration/nmd/E07000163,Craven,12.76,0.067,0.064,12.235,-0.532,-1.098,18.679,33.925,0.069,0.081
+http://opendatacommunities.org/id/geography/administration/nmd/E07000226,Crawley,18.94,0.11,0.077,27.892,-0.082,0.047,26.824,14.368,0.156,0.137
+http://opendatacommunities.org/id/geography/administration/lonb/E09000008,Croydon,22.477,0.136,0.092,15.577,-0.174,0.28,33.996,26.027,0.185,0.156
+http://opendatacommunities.org/id/geography/administration/nmd/E07000096,Dacorum,13.004,0.085,0.066,16.579,-0.743,-0.05,22.746,9.537,0.119,0.094
+http://opendatacommunities.org/id/geography/administration/nmd/E07000107,Dartford,18.812,0.095,0.071,19.595,-0.247,0.579,25.274,26.217,0.137,0.106
+http://opendatacommunities.org/id/geography/administration/nmd/E07000151,Daventry,13.184,0.073,0.061,17.363,-0.57,-0.155,23.765,15.251,0.101,0.078
+http://opendatacommunities.org/id/geography/administration/nmd/E07000035,Derbyshire Dales,11.895,0.068,0.061,12.391,-0.568,-1.171,22.875,24.185,0.087,0.076
+http://opendatacommunities.org/id/geography/administration/md/E08000017,Doncaster,30.289,0.166,0.137,39.72,0.665,0.703,16.173,13.344,0.227,0.159
+http://opendatacommunities.org/id/geography/administration/nmd/E07000108,Dover,22.161,0.134,0.113,24.745,-0.033,0.151,23.488,16.133,0.194,0.12
+http://opendatacommunities.org/id/geography/administration/md/E08000027,Dudley,24.103,0.156,0.124,28.321,0.287,-0.131,12.587,24.049,0.206,0.162
+http://opendatacommunities.org/id/geography/administration/lonb/E09000009,Ealing,22.71,0.14,0.091,12.546,-0.326,0.239,36.52,30.34,0.166,0.223
+http://opendatacommunities.org/id/geography/administration/nmd/E07000009,East Cambridgeshire,11.507,0.07,0.055,16.407,-0.957,-0.743,27.872,14.671,0.083,0.095
+http://opendatacommunities.org/id/geography/administration/nmd/E07000040,East Devon,12.764,0.081,0.072,14.52,-0.672,-0.938,18.942,21.903,0.104,0.085
+http://opendatacommunities.org/id/geography/administration/nmd/E07000085,East Hampshire,10.284,0.06,0.053,10.782,-0.909,-0.392,23.296,17.533,0.077,0.067
+http://opendatacommunities.org/id/geography/administration/nmd/E07000242,East Hertfordshire,8.188,0.06,0.048,8.693,-1.425,-0.404,20.16,11.087,0.076,0.08
+http://opendatacommunities.org/id/geography/administration/nmd/E07000137,East Lindsey,29.892,0.162,0.148,32.359,0.571,-0.604,24.4,26.393,0.22,0.152
+http://opendatacommunities.org/id/geography/administration/nmd/E07000152,East Northamptonshire,13.897,0.084,0.069,22.458,-0.492,-0.349,20.232,14.07,0.111,0.098
+http://opendatacommunities.org/id/geography/administration/nmd/E07000193,East Staffordshire,19.028,0.103,0.086,22.829,0.043,-0.213,18.783,29.436,0.132,0.112
+http://opendatacommunities.org/id/geography/administration/nmd/E07000244,East Suffolk,19.56,0.112,0.098,24.332,-0.132,-0.414,20.053,22.849,0.15,0.105
+http://opendatacommunities.org/id/geography/administration/nmd/E07000061,Eastbourne,22.11,0.141,0.119,24.884,0.038,-0.045,22.703,14.178,0.193,0.133
+http://opendatacommunities.org/id/geography/administration/nmd/E07000086,Eastleigh,10.192,0.066,0.056,14.99,-0.786,-0.233,15.604,14.075,0.085,0.081
+http://opendatacommunities.org/id/geography/administration/nmd/E07000030,Eden,16.328,0.07,0.061,18.838,-0.544,-1.219,27.482,41.667,0.087,0.076
+http://opendatacommunities.org/id/geography/administration/nmd/E07000207,Elmbridge,7.944,0.057,0.043,7.012,-1.478,-0.223,19.823,13.087,0.069,0.074
+http://opendatacommunities.org/id/geography/administration/lonb/E09000010,Enfield,25.781,0.171,0.102,20.255,-0.535,0.199,39.666,27.479,0.225,0.21
+http://opendatacommunities.org/id/geography/administration/nmd/E07000072,Epping Forest,15.068,0.091,0.066,19.608,-0.778,0.308,23.282,16.876,0.124,0.112
+http://opendatacommunities.org/id/geography/administration/nmd/E07000208,Epsom and Ewell,8.833,0.056,0.047,8.46,-1.138,-0.057,20.907,13.507,0.073,0.072
+http://opendatacommunities.org/id/geography/administration/nmd/E07000036,Erewash,18.818,0.12,0.101,26.859,0.007,-0.406,9.046,20.283,0.171,0.122
+http://opendatacommunities.org/id/geography/administration/nmd/E07000041,Exeter,16.215,0.095,0.077,18.085,-0.09,-0.352,17.54,23.485,0.136,0.128
+http://opendatacommunities.org/id/geography/administration/nmd/E07000087,Fareham,9.019,0.056,0.051,10.646,-0.838,-0.528,19.961,16.235,0.076,0.067
+http://opendatacommunities.org/id/geography/administration/nmd/E07000010,Fenland,25.426,0.14,0.112,37.913,0.501,-0.032,23.669,15.459,0.201,0.142
+http://opendatacommunities.org/id/geography/administration/nmd/E07000112,Folkestone and Hythe,24.149,0.145,0.123,25.876,0.128,-0.011,23.804,19.517,0.201,0.139
+http://opendatacommunities.org/id/geography/administration/nmd/E07000080,Forest of Dean,18.013,0.107,0.092,23.968,-0.432,-0.822,22.883,24.988,0.14,0.111
+http://opendatacommunities.org/id/geography/administration/nmd/E07000119,Fylde,15.875,0.096,0.096,12.511,0.208,-0.562,12.381,18.923,0.109,0.105
+http://opendatacommunities.org/id/geography/administration/md/E08000037,Gateshead,28.217,0.167,0.139,26.881,0.824,0.357,17.644,11.259,0.204,0.194
+http://opendatacommunities.org/id/geography/administration/nmd/E07000173,Gedling,14.894,0.102,0.092,18.694,-0.256,-0.377,14.746,12.855,0.138,0.105
+http://opendatacommunities.org/id/geography/administration/nmd/E07000081,Gloucester,21.807,0.126,0.101,26.928,0.378,-0.23,21.975,14.195,0.174,0.132
+http://opendatacommunities.org/id/geography/administration/nmd/E07000088,Gosport,20.541,0.107,0.089,30.357,0.062,0.337,18.61,22.557,0.158,0.105
+http://opendatacommunities.org/id/geography/administration/nmd/E07000109,Gravesham,21.414,0.122,0.095,27.216,-0.152,0.826,15.903,18.842,0.172,0.125
+http://opendatacommunities.org/id/geography/administration/nmd/E07000145,Great Yarmouth,33.097,0.184,0.162,42.049,0.587,0.074,20.752,24.196,0.248,0.17
+http://opendatacommunities.org/id/geography/administration/lonb/E09000011,Greenwich,24.464,0.159,0.102,15.639,-0.021,0.457,32.314,24.635,0.212,0.234
+http://opendatacommunities.org/id/geography/administration/nmd/E07000209,Guildford,9.395,0.057,0.045,11.311,-0.968,-0.522,22.506,14.622,0.084,0.071
+http://opendatacommunities.org/id/geography/administration/lonb/E09000012,Hackney,32.526,0.196,0.114,14.972,0.371,0.621,42.745,36.053,0.249,0.407
+http://opendatacommunities.org/id/geography/administration/nmd/E07000164,Hambleton,11.987,0.067,0.058,14.659,-0.789,-1.235,24.217,22.413,0.086,0.077
+http://opendatacommunities.org/id/geography/administration/lonb/E09000013,Hammersmith and Fulham,22.27,0.142,0.094,8.141,-0.05,0.34,28.264,35.009,0.186,0.256
+http://opendatacommunities.org/id/geography/administration/nmd/E07000131,Harborough,8.015,0.056,0.047,10.977,-1.084,-0.65,19.032,10.643,0.067,0.072
+http://opendatacommunities.org/id/geography/administration/lonb/E09000014,Haringey,27.956,0.17,0.106,17.6,-0.128,0.732,35.08,34.361,0.208,0.299
+http://opendatacommunities.org/id/geography/administration/nmd/E07000073,Harlow,21.413,0.134,0.097,26.764,0.203,0.222,26.754,3.885,0.186,0.15
+http://opendatacommunities.org/id/geography/administration/nmd/E07000165,Harrogate,10.897,0.062,0.056,10.342,-0.611,-0.964,21.472,22.427,0.067,0.077
+http://opendatacommunities.org/id/geography/administration/lonb/E09000015,Harrow,15.031,0.109,0.067,8.044,-1.04,-0.143,33.882,18.953,0.123,0.173
+http://opendatacommunities.org/id/geography/administration/nmd/E07000089,Hart,5.544,0.042,0.035,6.429,-1.529,-0.659,19.535,8.233,0.055,0.054
+http://opendatacommunities.org/id/geography/administration/nmd/E07000062,Hastings,34.281,0.202,0.16,33.115,0.633,0.46,27.208,22.811,0.265,0.196
+http://opendatacommunities.org/id/geography/administration/nmd/E07000090,Havant,21.806,0.126,0.103,30.68,0.056,0.267,18.153,16.939,0.185,0.119
+http://opendatacommunities.org/id/geography/administration/lonb/E09000016,Havering,16.789,0.108,0.078,22.594,-0.538,0.13,22.713,16.749,0.16,0.117
+http://opendatacommunities.org/id/geography/administration/nmd/E07000098,Hertsmere,13.938,0.089,0.069,13.77,-0.668,0.012,25.876,12.905,0.108,0.113
+http://opendatacommunities.org/id/geography/administration/nmd/E07000037,High Peak,15.642,0.097,0.087,17.583,0.008,-0.707,15.569,19.45,0.122,0.108
+http://opendatacommunities.org/id/geography/administration/lonb/E09000017,Hillingdon,18.223,0.114,0.075,16.402,-0.379,0.235,29.628,20.298,0.157,0.145
+http://opendatacommunities.org/id/geography/administration/nmd/E07000132,Hinckley and Bosworth,13.461,0.082,0.071,21.59,-0.442,-0.201,16.332,13.976,0.11,0.092
+http://opendatacommunities.org/id/geography/administration/nmd/E07000227,Horsham,9.89,0.056,0.051,9.597,-0.894,-0.718,25.377,16.75,0.066,0.066
+http://opendatacommunities.org/id/geography/administration/lonb/E09000018,Hounslow,21.487,0.129,0.079,13.287,-0.27,0.373,35.101,29.818,0.17,0.197
+http://opendatacommunities.org/id/geography/administration/nmd/E07000011,Huntingdonshire,12.55,0.074,0.062,18.129,-0.608,-0.404,23.837,14.752,0.107,0.081
+http://opendatacommunities.org/id/geography/administration/nmd/E07000120,Hyndburn,34.333,0.182,0.151,30.772,1.068,0.441,7.439,40.82,0.219,0.184
+http://opendatacommunities.org/id/geography/administration/nmd/E07000202,Ipswich,25.89,0.141,0.109,33.404,0.396,0.409,19.255,25.099,0.19,0.15
+http://opendatacommunities.org/id/geography/administration/lonb/E09000019,Islington,27.535,0.179,0.111,12.483,0.274,0.607,28.204,35.373,0.275,0.336
+http://opendatacommunities.org/id/geography/administration/lonb/E09000020,Kensington and Chelsea,21.526,0.117,0.08,5.192,-1.243,0.331,36.056,42.014,0.129,0.199
+http://opendatacommunities.org/id/geography/administration/nmd/E07000153,Kettering,19.23,0.113,0.092,24.256,0.051,0.009,19.687,15.507,0.152,0.117
+http://opendatacommunities.org/id/geography/administration/nmd/E07000146,King's Lynn and West Norfolk,23.72,0.12,0.103,33.164,0.426,-0.679,25.552,23.673,0.159,0.124
+http://opendatacommunities.org/id/geography/administration/lonb/E09000021,Kingston upon Thames,11.381,0.078,0.053,6.938,-0.963,-0.332,24.744,24.718,0.1,0.117
+http://opendatacommunities.org/id/geography/administration/md/E08000034,Kirklees,25.151,0.143,0.113,25.144,0.166,0.483,18.323,31.195,0.177,0.149
+http://opendatacommunities.org/id/geography/administration/md/E08000011,Knowsley,43.006,0.251,0.202,41.894,1.381,0.22,18.365,27.953,0.303,0.294
+http://opendatacommunities.org/id/geography/administration/lonb/E09000022,Lambeth,25.422,0.153,0.093,10.493,0.148,0.532,28.43,44.402,0.229,0.302
+http://opendatacommunities.org/id/geography/administration/nmd/E07000121,Lancaster,24.165,0.129,0.106,20.064,0.512,0.009,15.182,32.233,0.175,0.142
+http://opendatacommunities.org/id/geography/administration/md/E08000035,Leeds,27.301,0.143,0.107,26.25,0.415,0.666,15.464,35.006,0.203,0.156
+http://opendatacommunities.org/id/geography/administration/nmd/E07000063,Lewes,15.758,0.099,0.083,20.567,-0.404,-0.517,24.272,14.585,0.128,0.101
+http://opendatacommunities.org/id/geography/administration/lonb/E09000023,Lewisham,26.661,0.164,0.104,13.911,0.067,0.402,34.751,36.405,0.229,0.24
+http://opendatacommunities.org/id/geography/administration/nmd/E07000194,Lichfield,12.566,0.084,0.074,15.448,-0.432,-0.595,19.444,11.842,0.112,0.092
+http://opendatacommunities.org/id/geography/administration/nmd/E07000138,Lincoln,26.889,0.155,0.121,30.752,0.653,0.101,22.459,15.438,0.231,0.178
+http://opendatacommunities.org/id/geography/administration/md/E08000012,Liverpool,42.412,0.235,0.176,33.793,1.347,0.591,14.926,42.039,0.299,0.3
+http://opendatacommunities.org/id/geography/administration/nmd/E07000110,Maidstone,16.503,0.095,0.073,18.885,-0.49,0.003,24.751,22.247,0.134,0.097
+http://opendatacommunities.org/id/geography/administration/nmd/E07000074,Maldon,14.169,0.086,0.071,20.526,-0.555,-0.628,23.099,17.556,0.118,0.096
+http://opendatacommunities.org/id/geography/administration/nmd/E07000235,Malvern Hills,16.066,0.092,0.08,11.978,-0.603,-0.431,27.492,27.831,0.128,0.091
+http://opendatacommunities.org/id/geography/administration/md/E08000003,Manchester,40.005,0.219,0.139,28.119,1.198,1.206,25.867,32.229,0.297,0.336
+http://opendatacommunities.org/id/geography/administration/nmd/E07000174,Mansfield,28.503,0.156,0.144,36.748,0.74,0.198,17.628,12.804,0.212,0.147
+http://opendatacommunities.org/id/geography/administration/nmd/E07000133,Melton,12.532,0.072,0.059,15.417,-0.574,-0.554,23.917,18.782,0.106,0.077
+http://opendatacommunities.org/id/geography/administration/nmd/E07000187,Mendip,16.6,0.099,0.084,17.677,-0.254,-0.242,23.161,19.1,0.123,0.101
+http://opendatacommunities.org/id/geography/administration/lonb/E09000024,Merton,14.649,0.1,0.064,9.184,-0.615,-0.051,22.234,29.557,0.134,0.151
+http://opendatacommunities.org/id/geography/administration/nmd/E07000042,Mid Devon,16.928,0.093,0.077,19.625,-0.757,-0.911,25.493,35.035,0.116,0.103
+http://opendatacommunities.org/id/geography/administration/nmd/E07000203,Mid Suffolk,13.225,0.071,0.056,15.8,-0.907,-0.642,29.028,22.648,0.098,0.083
+http://opendatacommunities.org/id/geography/administration/nmd/E07000228,Mid Sussex,7.747,0.053,0.046,10.357,-1.227,-0.674,19.913,12.129,0.065,0.068
+http://opendatacommunities.org/id/geography/administration/nmd/E07000210,Mole Valley,9.511,0.054,0.051,9.002,-0.867,-0.492,23.756,16.585,0.064,0.063
+http://opendatacommunities.org/id/geography/administration/nmd/E07000091,New Forest,13.015,0.077,0.069,15.074,-0.628,-0.192,23.814,13.986,0.108,0.077
+http://opendatacommunities.org/id/geography/administration/nmd/E07000175,Newark and Sherwood,19.227,0.109,0.101,25.939,-0.07,-0.298,20.677,16.017,0.153,0.101
+http://opendatacommunities.org/id/geography/administration/md/E08000021,Newcastle upon Tyne,29.79,0.178,0.128,28.68,0.815,0.461,17.401,12.046,0.247,0.218
+http://opendatacommunities.org/id/geography/administration/nmd/E07000195,Newcastle-under-Lyme,18.929,0.108,0.098,23.163,0.312,-0.162,13.123,16.399,0.145,0.119
+http://opendatacommunities.org/id/geography/administration/lonb/E09000025,Newham,29.577,0.169,0.093,17.775,-0.03,0.497,49.306,32.471,0.201,0.373
+http://opendatacommunities.org/id/geography/administration/nmd/E07000043,North Devon,20.559,0.11,0.092,20.6,0.099,-0.728,26.966,28.635,0.132,0.121
+http://opendatacommunities.org/id/geography/administration/nmd/E07000038,North East Derbyshire,17.399,0.112,0.103,23.38,0.143,-0.972,13.615,12.548,0.145,0.117
+http://opendatacommunities.org/id/geography/administration/nmd/E07000099,North Hertfordshire,11.627,0.079,0.064,12.868,-0.712,-0.362,21.441,13.089,0.106,0.092
+http://opendatacommunities.org/id/geography/administration/nmd/E07000139,North Kesteven,11.553,0.081,0.071,13.244,-0.602,-1.406,19.975,13.252,0.101,0.099
+http://opendatacommunities.org/id/geography/administration/nmd/E07000147,North Norfolk,21.058,0.106,0.095,24.231,-0.021,-1.041,31.664,30.109,0.136,0.106
+http://opendatacommunities.org/id/geography/administration/md/E08000022,North Tyneside,22.279,0.144,0.122,20.683,0.43,0.157,15.238,5.879,0.179,0.16
+http://opendatacommunities.org/id/geography/administration/nmd/E07000218,North Warwickshire,17.907,0.097,0.08,25.791,-0.109,-0.067,21.346,22.43,0.129,0.113
+http://opendatacommunities.org/id/geography/administration/nmd/E07000134,North West Leicestershire,14.573,0.09,0.079,22.006,-0.169,-0.299,16.267,12.045,0.123,0.097
+http://opendatacommunities.org/id/geography/administration/nmd/E07000154,Northampton,23.358,0.123,0.093,26.477,0.349,0.462,24.223,18.827,0.168,0.144
+http://opendatacommunities.org/id/geography/administration/nmd/E07000148,Norwich,27.599,0.163,0.116,34.178,0.689,0.237,14.13,19.993,0.238,0.202
+http://opendatacommunities.org/id/geography/administration/nmd/E07000219,Nuneaton and Bedworth,23.54,0.136,0.113,30.122,0.279,0.295,17.657,18.541,0.188,0.141
+http://opendatacommunities.org/id/geography/administration/nmd/E07000135,Oadby and Wigston,12.958,0.086,0.071,17.704,-0.189,-0.436,16.681,9.13,0.118,0.107
+http://opendatacommunities.org/id/geography/administration/md/E08000004,Oldham,33.155,0.193,0.145,35.509,0.663,0.863,11.841,27.966,0.233,0.187
+http://opendatacommunities.org/id/geography/administration/nmd/E07000178,Oxford,16.707,0.093,0.061,16.468,-0.271,-0.042,23.557,27.418,0.158,0.127
+http://opendatacommunities.org/id/geography/administration/nmd/E07000122,Pendle,30.723,0.168,0.132,32.825,0.653,0.067,9.661,46.129,0.184,0.187
+http://opendatacommunities.org/id/geography/administration/nmd/E07000123,Preston,29.531,0.162,0.123,26.411,0.758,0.495,13.566,34.357,0.204,0.194
+http://opendatacommunities.org/id/geography/administration/lonb/E09000026,Redbridge,17.203,0.121,0.072,11.126,-0.74,0.295,27.979,25.177,0.137,0.195
+http://opendatacommunities.org/id/geography/administration/nmd/E07000236,Redditch,22.524,0.124,0.099,28.201,0.362,-0.065,29.861,8.412,0.164,0.141
+http://opendatacommunities.org/id/geography/administration/nmd/E07000211,Reigate and Banstead,11.276,0.067,0.055,11.92,-0.671,-0.217,23.293,16.324,0.091,0.076
+http://opendatacommunities.org/id/geography/administration/nmd/E07000124,Ribble Valley,10.594,0.057,0.06,7.396,-0.454,-0.802,19.411,23.207,0.058,0.071
+http://opendatacommunities.org/id/geography/administration/lonb/E09000027,Richmond upon Thames,9.425,0.064,0.05,3.534,-1.373,-0.07,17.494,26.621,0.07,0.094
+http://opendatacommunities.org/id/geography/administration/nmd/E07000166,Richmondshire,12.135,0.059,0.05,19.463,-0.667,-1.393,27.967,19.284,0.079,0.077
+http://opendatacommunities.org/id/geography/administration/md/E08000005,Rochdale,34.415,0.201,0.158,31.135,0.842,0.936,18.234,19.437,0.235,0.203
+http://opendatacommunities.org/id/geography/administration/nmd/E07000075,Rochford,10.449,0.073,0.059,20.451,-0.953,-0.589,19.737,6.551,0.096,0.092
+http://opendatacommunities.org/id/geography/administration/nmd/E07000125,Rossendale,24.062,0.145,0.122,21.724,0.344,0.087,16.688,26.183,0.176,0.154
+http://opendatacommunities.org/id/geography/administration/nmd/E07000064,Rother,19.768,0.113,0.1,19.528,-0.082,-0.419,26.617,22.97,0.16,0.104
+http://opendatacommunities.org/id/geography/administration/md/E08000018,Rotherham,29.55,0.168,0.144,33.365,0.817,0.449,13.09,14.393,0.221,0.164
+http://opendatacommunities.org/id/geography/administration/nmd/E07000220,Rugby,14.119,0.087,0.069,15.666,-0.395,-0.064,21.335,17.229,0.116,0.097
+http://opendatacommunities.org/id/geography/administration/nmd/E07000212,Runnymede,12.012,0.066,0.047,13.543,-0.78,-0.095,27.105,18.575,0.103,0.089
+http://opendatacommunities.org/id/geography/administration/nmd/E07000176,Rushcliffe,7.18,0.059,0.054,5.775,-1.135,-0.911,15.198,12.123,0.065,0.076
+http://opendatacommunities.org/id/geography/administration/nmd/E07000092,Rushmoor,15.903,0.104,0.065,19.017,-0.126,-0.007,23.201,13.063,0.114,0.204
+http://opendatacommunities.org/id/geography/administration/nmd/E07000167,Ryedale,15.665,0.082,0.064,18.379,-0.551,-1.334,26.968,34.572,0.107,0.092
+http://opendatacommunities.org/id/geography/administration/md/E08000006,Salford,34.21,0.191,0.147,30.934,0.995,0.686,18.988,24.23,0.241,0.218
+http://opendatacommunities.org/id/geography/administration/md/E08000028,Sandwell,34.884,0.215,0.15,36.936,0.705,0.277,20.866,37.156,0.263,0.26
+http://opendatacommunities.org/id/geography/administration/nmd/E07000168,Scarborough,26.28,0.145,0.129,29.336,0.499,-0.462,19.536,28.305,0.182,0.144
+http://opendatacommunities.org/id/geography/administration/nmd/E07000188,Sedgemoor,21.306,0.117,0.1,25.31,-0.066,-0.083,20.938,28.549,0.161,0.111
+http://opendatacommunities.org/id/geography/administration/md/E08000014,Sefton,27.035,0.162,0.148,20.557,0.75,-0.08,10.865,24.85,0.188,0.169
+http://opendatacommunities.org/id/geography/administration/nmd/E07000169,Selby,12.73,0.079,0.07,18.669,-0.523,-0.802,19.017,14.733,0.104,0.092
+http://opendatacommunities.org/id/geography/administration/nmd/E07000111,Sevenoaks,12.437,0.075,0.058,13.179,-1.037,0.128,23.139,17.288,0.11,0.077
+http://opendatacommunities.org/id/geography/administration/md/E08000019,Sheffield,27.06,0.156,0.116,29.183,0.456,0.38,17.196,20.887,0.219,0.181
+http://opendatacommunities.org/id/geography/administration/md/E08000029,Solihull,17.37,0.108,0.09,18.354,-0.256,-0.138,21.459,13.257,0.148,0.111
+http://opendatacommunities.org/id/geography/administration/nmd/E07000246,Somerset West and Taunton,19.142,0.104,0.089,18.929,-0.07,-0.216,25.368,25.147,0.128,0.109
+http://opendatacommunities.org/id/geography/administration/nmd/E07000006,South Bucks,9.481,0.057,0.043,8.666,-1.306,-0.107,26.06,13.254,0.077,0.069
+http://opendatacommunities.org/id/geography/administration/nmd/E07000012,South Cambridgeshire,8.496,0.056,0.046,6.605,-1.147,-0.54,24.745,13.177,0.075,0.069
+http://opendatacommunities.org/id/geography/administration/nmd/E07000039,South Derbyshire,14.494,0.083,0.071,20.837,-0.176,-0.662,20.47,18.192,0.114,0.097
+http://opendatacommunities.org/id/geography/administration/nmd/E07000044,South Hams,13.724,0.087,0.074,8.381,-0.598,-1.026,22.374,28.759,0.102,0.095
+http://opendatacommunities.org/id/geography/administration/nmd/E07000140,South Holland,17.896,0.103,0.084,32.664,-0.214,-0.744,23.983,14.623,0.143,0.112
+http://opendatacommunities.org/id/geography/administration/nmd/E07000141,South Kesteven,13.499,0.091,0.074,15.959,-0.525,-0.937,22.907,13.151,0.129,0.094
+http://opendatacommunities.org/id/geography/administration/nmd/E07000031,South Lakeland,12.501,0.063,0.061,12.03,-0.485,-1.16,20.428,32.564,0.07,0.074
+http://opendatacommunities.org/id/geography/administration/nmd/E07000149,South Norfolk,13.318,0.078,0.067,15.43,-0.625,-0.911,25.116,22,0.098,0.09
+http://opendatacommunities.org/id/geography/administration/nmd/E07000155,South Northamptonshire,7.652,0.049,0.043,10.543,-1.042,-0.752,20.473,13.232,0.056,0.068
+http://opendatacommunities.org/id/geography/administration/nmd/E07000179,South Oxfordshire,8.459,0.054,0.043,11.952,-1.24,-0.774,21.535,15.269,0.074,0.066
+http://opendatacommunities.org/id/geography/administration/nmd/E07000126,South Ribble,15.33,0.091,0.081,14.155,0.093,-0.321,12.102,23.616,0.118,0.1
+http://opendatacommunities.org/id/geography/administration/nmd/E07000189,South Somerset,17.347,0.095,0.08,20.102,-0.25,-0.307,24.18,25.018,0.132,0.096
+http://opendatacommunities.org/id/geography/administration/nmd/E07000196,South Staffordshire,13.124,0.086,0.072,16.784,-0.484,-0.425,17.309,17.731,0.11,0.104
+http://opendatacommunities.org/id/geography/administration/md/E08000023,South Tyneside,31.509,0.206,0.172,27.364,0.863,0.333,15.787,4.609,0.267,0.214
+http://opendatacommunities.org/id/geography/administration/lonb/E09000028,Southwark,25.811,0.162,0.097,11.086,0.112,0.475,32.727,35.982,0.241,0.312
+http://opendatacommunities.org/id/geography/administration/nmd/E07000213,Spelthorne,14.943,0.079,0.061,18.213,-0.56,0.053,26.914,23.911,0.123,0.084
+http://opendatacommunities.org/id/geography/administration/nmd/E07000240,St Albans,8.339,0.06,0.049,4.864,-1.31,-0.262,22.153,11.486,0.072,0.073
+http://opendatacommunities.org/id/geography/administration/md/E08000013,St. Helens,31.518,0.182,0.165,27.804,1.069,0.201,12.704,18.217,0.237,0.168
+http://opendatacommunities.org/id/geography/administration/nmd/E07000197,Stafford,13.678,0.078,0.075,13.947,-0.216,-0.582,21.42,15.299,0.106,0.083
+http://opendatacommunities.org/id/geography/administration/nmd/E07000198,Staffordshire Moorlands,15.04,0.084,0.081,18.228,-0.249,-0.597,19.592,20.639,0.107,0.097
+http://opendatacommunities.org/id/geography/administration/nmd/E07000243,Stevenage,19.695,0.122,0.094,25.396,-0.094,0.17,24.367,11.578,0.173,0.135
+http://opendatacommunities.org/id/geography/administration/md/E08000007,Stockport,20.826,0.12,0.104,17.933,0.355,0.337,13.719,19.783,0.146,0.129
+http://opendatacommunities.org/id/geography/administration/nmd/E07000221,Stratford-on-Avon,11.728,0.068,0.056,9.137,-0.626,-0.512,25.426,23.282,0.084,0.082
+http://opendatacommunities.org/id/geography/administration/nmd/E07000082,Stroud,10.797,0.078,0.067,11.741,-0.591,-1.02,18.68,14.931,0.095,0.088
+http://opendatacommunities.org/id/geography/administration/md/E08000024,Sunderland,30.586,0.192,0.161,30.423,0.828,0.409,13.346,4.528,0.243,0.217
+http://opendatacommunities.org/id/geography/administration/nmd/E07000214,Surrey Heath,8.066,0.054,0.044,9.757,-0.95,-0.653,22.036,9.851,0.071,0.066
+http://opendatacommunities.org/id/geography/administration/lonb/E09000029,Sutton,13.987,0.095,0.07,11.953,-0.57,-0.174,22.792,21.317,0.126,0.114
+http://opendatacommunities.org/id/geography/administration/nmd/E07000113,Swale,27.076,0.149,0.12,34.111,0.23,0.461,24.111,19.252,0.212,0.136
+http://opendatacommunities.org/id/geography/administration/md/E08000008,Tameside,31.374,0.175,0.143,29.128,0.855,0.721,15.518,24.589,0.223,0.177
+http://opendatacommunities.org/id/geography/administration/nmd/E07000199,Tamworth,21.061,0.126,0.096,30.922,0.27,0.081,19.193,10.662,0.174,0.152
+http://opendatacommunities.org/id/geography/administration/nmd/E07000215,Tandridge,11.896,0.063,0.054,12.767,-0.654,0.108,23.931,16.917,0.09,0.068
+http://opendatacommunities.org/id/geography/administration/nmd/E07000045,Teignbridge,15.893,0.101,0.084,15.698,-0.268,-0.648,18.932,25.047,0.129,0.114
+http://opendatacommunities.org/id/geography/administration/nmd/E07000076,Tendring,30.484,0.173,0.153,35.781,0.693,0.205,19.157,19.782,0.25,0.15
+http://opendatacommunities.org/id/geography/administration/nmd/E07000093,Test Valley,11.931,0.066,0.056,13.466,-0.736,-0.453,25.394,16.491,0.095,0.073
+http://opendatacommunities.org/id/geography/administration/nmd/E07000083,Tewkesbury,12.142,0.077,0.061,15.883,-0.592,-0.845,23.885,15.408,0.112,0.082
+http://opendatacommunities.org/id/geography/administration/nmd/E07000114,Thanet,31.314,0.185,0.155,32.475,0.379,0.675,21.569,18.633,0.239,0.174
+http://opendatacommunities.org/id/geography/administration/nmd/E07000102,Three Rivers,9.871,0.071,0.054,12.196,-1.106,-0.429,22.133,9.181,0.092,0.087
+http://opendatacommunities.org/id/geography/administration/nmd/E07000115,Tonbridge and Malling,13.333,0.08,0.065,17.262,-0.734,-0.192,23.712,14.998,0.114,0.087
+http://opendatacommunities.org/id/geography/administration/nmd/E07000046,Torridge,23.269,0.121,0.101,24.535,0.116,-0.894,28.345,36.788,0.156,0.118
+http://opendatacommunities.org/id/geography/administration/lonb/E09000030,Tower Hamlets,27.913,0.192,0.1,16.934,0.195,0.509,30.491,33.213,0.266,0.439
+http://opendatacommunities.org/id/geography/administration/md/E08000009,Trafford,16.088,0.107,0.09,10.656,-0.072,-0.052,13.794,21.069,0.117,0.13
+http://opendatacommunities.org/id/geography/administration/nmd/E07000116,Tunbridge Wells,11.31,0.073,0.059,12.294,-0.877,-0.392,20.741,19.705,0.089,0.089
+http://opendatacommunities.org/id/geography/administration/nmd/E07000077,Uttlesford,9.258,0.054,0.041,9.793,-1.308,-0.551,29.161,14.464,0.063,0.077
+http://opendatacommunities.org/id/geography/administration/nmd/E07000180,Vale of White Horse,8.358,0.057,0.048,11.619,-1.122,-1.055,21.93,12.408,0.08,0.065
+http://opendatacommunities.org/id/geography/administration/md/E08000036,Wakefield,27.306,0.147,0.132,35.794,0.539,0.514,15.797,14.29,0.197,0.145
+http://opendatacommunities.org/id/geography/administration/md/E08000030,Walsall,31.555,0.2,0.143,37.845,0.562,0.171,18.097,26.678,0.261,0.212
+http://opendatacommunities.org/id/geography/administration/lonb/E09000031,Waltham Forest,25.209,0.152,0.093,16.968,-0.161,0.406,36.465,34.303,0.192,0.228
+http://opendatacommunities.org/id/geography/administration/lonb/E09000032,Wandsworth,16.611,0.107,0.064,6.649,-0.388,0.118,26.981,32.499,0.154,0.21
+http://opendatacommunities.org/id/geography/administration/nmd/E07000222,Warwick,12.005,0.07,0.057,9.664,-0.351,-0.199,21.527,17.826,0.089,0.096
+http://opendatacommunities.org/id/geography/administration/nmd/E07000103,Watford,15.41,0.092,0.068,12.578,-0.406,0.168,25.052,22.088,0.115,0.129
+http://opendatacommunities.org/id/geography/administration/nmd/E07000216,Waverley,7.494,0.054,0.049,7.59,-0.917,-0.751,19.499,9.515,0.064,0.067
+http://opendatacommunities.org/id/geography/administration/nmd/E07000065,Wealden,12.311,0.073,0.06,14.304,-0.97,-0.746,26.133,20.914,0.097,0.081
+http://opendatacommunities.org/id/geography/administration/nmd/E07000156,Wellingborough,21.676,0.126,0.099,29.522,0.14,0.2,21.549,13.821,0.176,0.132
+http://opendatacommunities.org/id/geography/administration/nmd/E07000241,Welwyn Hatfield,14.215,0.086,0.063,16.161,-0.446,-0.142,26.247,12.436,0.133,0.103
+http://opendatacommunities.org/id/geography/administration/nmd/E07000047,West Devon,18.052,0.098,0.084,13.317,-0.186,-0.968,25.592,37.429,0.121,0.102
+http://opendatacommunities.org/id/geography/administration/nmd/E07000127,West Lancashire,18.645,0.123,0.105,19.109,0.008,-0.472,19.47,14.123,0.159,0.14
+http://opendatacommunities.org/id/geography/administration/nmd/E07000142,West Lindsey,20.355,0.123,0.109,19.889,-0.049,-0.84,23.524,21.565,0.18,0.106
+http://opendatacommunities.org/id/geography/administration/nmd/E07000181,West Oxfordshire,8.684,0.059,0.048,13.309,-0.924,-1.05,22.444,11.238,0.079,0.071
+http://opendatacommunities.org/id/geography/administration/nmd/E07000245,West Suffolk,16.245,0.081,0.066,23.483,-0.32,-0.315,31.61,14.182,0.102,0.096
+http://opendatacommunities.org/id/geography/administration/lonb/E09000033,Westminster,20.339,0.135,0.088,8.535,-0.855,0.105,23.114,40.92,0.183,0.226
+http://opendatacommunities.org/id/geography/administration/md/E08000010,Wigan,25.713,0.148,0.131,26.672,0.618,0.386,12.808,13.392,0.174,0.16
+http://opendatacommunities.org/id/geography/administration/nmd/E07000094,Winchester,9.615,0.058,0.048,8.774,-1.061,-0.534,24.284,17.473,0.072,0.073
+http://opendatacommunities.org/id/geography/administration/md/E08000015,Wirral,29.589,0.174,0.157,21.595,0.962,-0.053,10.343,27.427,0.218,0.166
+http://opendatacommunities.org/id/geography/administration/nmd/E07000217,Woking,10.804,0.067,0.055,10.152,-0.655,-0.235,23.576,13.645,0.087,0.084
+http://opendatacommunities.org/id/geography/administration/md/E08000031,Wolverhampton,32.102,0.211,0.154,31.717,0.607,0.066,20.63,26.558,0.271,0.225
+http://opendatacommunities.org/id/geography/administration/nmd/E07000237,Worcester,20.414,0.117,0.092,20.437,0.038,0.087,19.851,26.35,0.168,0.128
+http://opendatacommunities.org/id/geography/administration/nmd/E07000229,Worthing,17.012,0.101,0.09,18.582,-0.085,-0.398,15.978,27.815,0.125,0.115
+http://opendatacommunities.org/id/geography/administration/nmd/E07000238,Wychavon,15.766,0.085,0.073,17.675,-0.559,-0.323,27.306,22.46,0.113,0.092
+http://opendatacommunities.org/id/geography/administration/nmd/E07000007,Wycombe,10.742,0.076,0.059,13.985,-1.037,-0.662,23.64,10.375,0.097,0.087
+http://opendatacommunities.org/id/geography/administration/nmd/E07000128,Wyre,20.858,0.125,0.112,19.271,0.427,-0.394,13.605,19.488,0.163,0.128
+http://opendatacommunities.org/id/geography/administration/nmd/E07000239,Wyre Forest,22.437,0.127,0.108,25.827,-0.058,0.083,23.971,23.294,0.181,0.123
