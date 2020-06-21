@@ -7,7 +7,6 @@ data/*xlsx
 *.pyc
 *.geojson
 *.html
-notebooks/*
 notebooks/.ipynb_checkpoints/
 data/geofiles/geofile.*
 __pycache__/
