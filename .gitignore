@@ -1,6 +1,7 @@
 *env/
 */*pycache*
 *~
+.vscode/
 data/coronavirus*
 data/*xlsx
 *.pyc
