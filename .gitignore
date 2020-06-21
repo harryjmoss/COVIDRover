@@ -2,6 +2,7 @@
 */*pycache*
 *~
 data/coronavirus*
+data/*xlsx
 *.pyc
 *.geojson
 *.html

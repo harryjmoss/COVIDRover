@@ -1,47 +1,59 @@
 # test_dataprep
 import pandas as pd
 import numpy as np
-import geopandas
-import os
-import requests
+import geopandas, os, requests, pytest
 from covidrover.dataprep import get_data
 
-def make_csv_request(testurl):
-    csvtext=requests.get(testurl)
-    return csvtext.status_code
+class TestRequests():
+    testurl_200="https://coronavirus.data.gov.uk/downloads/csv/coronavirus-cases_latest.csv"
+    testurl_404="https://github.com/404"
+    @pytest.mark.parametrize("input,expected", [
+        (testurl_200, 200),
+        (testurl_404, 404),
+    ])
+    
+    def test_request(self,input,expected):
+        csvtext=requests.get(input)
+        assert csvtext.status_code == expected
 
-def generate_dataframe_from_csv(testcsv):
-    df = pd.read_csv(testcsv)
-    return df
+class TestFilesExist():
+    test_deprivationdata="data/deprivation_index_by_area.csv"
+    test_textcsv='data/csvText.csv'
+    test_deaths_gender_deprivationdecile='data/deaths_by_gender_deprivationDecile.csv'
 
-def file_exists(testfile): 
-    return os.path.exists(testfile)
 
-def test_successful_request():
-    testurl="https://coronavirus.data.gov.uk/downloads/csv/coronavirus-cases_latest.csv"
-    assert make_csv_request(testurl) == 200
+    @pytest.mark.parametrize("input", [
+        (test_deprivationdata),
+        (test_textcsv),
+        (test_deaths_gender_deprivationdecile)
+    ])
+    def test_file_exists(self,input): 
+        assert os.path.exists(input)
 
-def test_generate_dataframe_from_csv():
-    df = generate_dataframe_from_csv('data/csvText.csv')
-    expected_columns = ["Area name","Area code","Area type",
+class TestDataFames():
+
+    def generate_dataframe_from_csv(self,testcsv):
+        dataframe = pd.read_csv(testcsv)
+        return dataframe
+
+
+    def test_generate_dataframe_from_csv(self):
+        df = self.generate_dataframe_from_csv('data/csvText.csv')
+        expected_columns = ["Area name","Area code","Area type",
                         "Specimen date","Daily lab-confirmed cases",
                         "Previously reported daily cases","Change in daily cases",
                         "Cumulative lab-confirmed cases","Previously reported cumulative cases",
                         "Change in cumulative cases","Cumulative lab-confirmed cases rate"]
-    assert df.columns.tolist()  == expected_columns
+        assert df.columns.tolist()  == expected_columns
 
-def test_file_exists_areadeprivation():
-    testfile="data/deprivation_index_by_area.csv"
-    assert file_exists(testfile)
+    def test_get_latest_dataframes(self):
+        # use deaths url, file is much smaller
+        deaths_url="https://coronavirus.data.gov.uk/downloads/csv/coronavirus-cases_latest.csv"
+        test_dataframe=get_data.get_latest_dataframes(deaths_url)
+        assert not test_dataframe.empty
 
-def test_get_latest_dataframes():
-    # use deaths url, file is much smaller
-    deaths_url="https://coronavirus.data.gov.uk/downloads/csv/coronavirus-cases_latest.csv"
-    test_dataframe=get_data.get_latest_dataframes(deaths_url)
-    assert not test_dataframe.empty
-
-def test_clean_deprivation_area_df():
-    inputcolumns=['http://opendatacommunities.org/def/ontology/geography/refArea',
+    def test_clean_deprivation_area_df(self):
+        inputcolumns=['http://opendatacommunities.org/def/ontology/geography/refArea',
         'Reference area',
         'a. Index of Multiple Deprivation (IMD)',
         'b. Income Deprivation Domain',
@@ -52,18 +64,19 @@ def test_clean_deprivation_area_df():
         'g. Barriers to Housing and Services Domain',
         'h. Living Environment Deprivation Domain',
         'i. Income Deprivation Affecting Children Index (IDACI)',
-        'j. Income Deprivation Affecting Older People Index (IDAOPI)']
+        'j. Income Deprivation Affecting Older People Index (IDAOPI)'
+        ]
 
-    vals=["http://opendatacommunities.org/id/geography/administration/ua/E06000022",
-    "Bath and North East Somerset" ,11.745,0.079,0.063,14.043,-0.668,-0.279,16.763,
-    13.986,0.104,0.096]
-    testdataframe=pd.DataFrame([vals],columns=inputcolumns)
-    expectedcolumns = ['Area code','IMD']
-    cleanedcolumns=get_data.clean_deprivation_area_df(testdataframe).columns.to_list()
-    assert cleanedcolumns == expectedcolumns
+        vals=["http://opendatacommunities.org/id/geography/administration/ua/E06000022",
+        "Bath and North East Somerset" ,11.745,0.079,0.063,14.043,-0.668,-0.279,16.763,
+        13.986,0.104,0.096]
+        testdataframe=pd.DataFrame([vals],columns=inputcolumns)
+        expectedcolumns = ['Area code','IMD']
+        cleanedcolumns=get_data.clean_deprivation_area_df(testdataframe).columns.to_list()
+        assert cleanedcolumns == expectedcolumns
 
-def test_get_geo_data():
-
+class TestGeoDataFrames():
     test_geo_file='data/geofiles/test_geo.shp'
-    test_geo_df=get_data.get_geo_data(test_geo_file)
-    assert isinstance(test_geo_df,geopandas.geodataframe.GeoDataFrame)
+    def test_get_geo_data(self):
+        test_geo_df=get_data.get_geo_data(self.test_geo_file)
+        assert isinstance(test_geo_df,geopandas.geodataframe.GeoDataFrame)

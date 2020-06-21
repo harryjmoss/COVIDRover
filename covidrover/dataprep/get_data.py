@@ -26,6 +26,7 @@ def clean_deprivation_area_df(dep_df):
     dep_df['Area code']=areaCodeList
     area_dep=dep_df[['Area code','IMD']]
     return area_dep
+    
 def prepare_data(geo_path,cases_url,deaths_url):
     print("Preparing input data...")
     geography=get_geo_data(geo_path)
