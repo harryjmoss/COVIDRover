@@ -17,15 +17,16 @@ class TestRequests():
         assert csvtext.status_code == expected
 
 class TestFilesExist():
-    test_deprivationdata="data/deprivation_index_by_area.csv"
+    test_deprivationdata='data/deprivation_index_by_area.csv'
     test_textcsv='data/csvText.csv'
     test_deaths_gender_deprivationdecile='data/deaths_by_gender_deprivationDecile.csv'
-
+    test_deaths_regions='data/mortality_stats_byArea_EnglandWales_MarchMay2020.csv'
 
     @pytest.mark.parametrize("input", [
         (test_deprivationdata),
         (test_textcsv),
-        (test_deaths_gender_deprivationdecile)
+        (test_deaths_gender_deprivationdecile),
+        (test_deaths_regions)
     ])
     def test_file_exists(self,input): 
         assert os.path.exists(input)

@@ -13,7 +13,7 @@ from bokeh.models.tickers import FixedTicker, BasicTicker
 
 
 
-def plot_2d_hist(geodataframe,hist_title,xvar,yvar,nbins,mincases=1,write_file=True):
+def plot_2d_hist(geodataframe,hist_title,xvar,yvar,xbins,ybins,mincases=1,write_file=True):
     # set up figure and axis objects    
     plt.figure()
     ax=plt.gca()
@@ -23,6 +23,9 @@ def plot_2d_hist(geodataframe,hist_title,xvar,yvar,nbins,mincases=1,write_file=T
     # get numpy arrays out of dataframe
     xdata = geodataframe[xvar].to_numpy()
     ydata = geodataframe[yvar].to_numpy()
+    nbins=[xbins,ybins]
+    ax.set_yticks(ybins)
+    ax.set_xticks(xbins)
     # plot the 2d hist with the variables specified
     two_dim_hist=ax.hist2d(xdata,ydata,bins=nbins,cmin=mincases,cmap='viridis')
     # label the axes
@@ -33,13 +36,46 @@ def plot_2d_hist(geodataframe,hist_title,xvar,yvar,nbins,mincases=1,write_file=T
     cbar=plt.colorbar(two_dim_hist[3],ax=ax)
     # set a label for the colour bar
     cbar.ax.set_ylabel('Number of events',labelpad=15,rotation=270)
+    # sorts out padding, just aesthetic
     plt.tight_layout()
 
     if(write_file):
         output_file_name = "output/png/"+hist_title.title().replace(' ','')+".png"
-        plt.savefig(output_file_name)
+        plt.savefig(output_file_name,dpi=300)
     return two_dim_hist
 
+def plot_deaths_imd_decile(deaths_imd,hist_title,xaxis_label,yaxis_label,write_file=True):
+    # Sort the dataframe into All, Women, Men
+    deaths_imd_all=deaths_imd[deaths_imd['Sex'].str.match('Persons')].drop(columns="Sex")
+    deaths_imd_men=deaths_imd[deaths_imd['Sex'].str.match('Males')].drop(columns="Sex")
+    deaths_imd_women=deaths_imd[deaths_imd['Sex'].str.match('Females')].drop(columns="Sex")
+
+    # set up figure and axis
+    plt.figure(None,[10,8]) # figure number, [width,height (inches)]
+    ax=plt.gca()
+    
+    # Plot the lines of the mean fatality rate for All people, women and men
+    # Also plot the 95% CI error band around the mean
+    # Blank/filled labels for the bands is just stylistic
+    plt.plot(deaths_imd_all['Decile'].tolist(),deaths_imd_all['Rate'].tolist(),"Green",label='All')
+    plt.fill_between(deaths_imd_all['Decile'].tolist(),deaths_imd_all['LowerCI'],deaths_imd_all['UpperCI'],color="Green",alpha=0.5,label=" ")
+    plt.plot(deaths_imd_women['Decile'].tolist(),deaths_imd_women['Rate'].tolist(),"Orange",label='Women')
+    plt.fill_between(deaths_imd_women['Decile'].tolist(),deaths_imd_women['LowerCI'],deaths_imd_women['UpperCI'],color="Orange",alpha=0.5,label="95% CI")
+    plt.plot(deaths_imd_men['Decile'].tolist(),deaths_imd_men['Rate'].tolist(),"Red",label='Men')
+    plt.fill_between(deaths_imd_men['Decile'].tolist(),deaths_imd_men['LowerCI'],deaths_imd_men['UpperCI'],color="Red",alpha=0.5,label=" ")
+
+    # set title, ticks, labels
+    plt.title(hist_title)
+    ax.set_ylabel(xaxis_label)
+    ax.set_xlabel(yaxis_label)
+    ax.set_xticks(np.arange(0,11))
+    plt.legend(loc="upper right")
+
+    output_file_name = "output/png/"+hist_title.title().replace(' ','')+".png"
+    # write file, or don't 
+    if(write_file):
+        plt.savefig(output_file_name,dpi=300)
+    return output_file_name
 
 def plot_chloropleth(json_map_df,plotfield,plot_title,hover_fields,cbar_low_y,cbar_high_y,save_output=True,custom_ticks=None):
     geosource = GeoJSONDataSource(geojson = json_map_df)
@@ -85,7 +121,6 @@ def plot_chloropleth(json_map_df,plotfield,plot_title,hover_fields,cbar_low_y,cb
 
 def setup_plots():
     print("Generating plots...")
-    # plot an n * n bin 2d histogram with variables of your choice:
     hover_fields_standard={'Area':'@Area','Average IMD':'@IMD','Cases':'@Cases','Date':'@Date'}
     hover_fields_imd_norm={'Area':'@Area','Normalised Average IMD':'@IMDNorm','Cases':'@Cases','Date':'@Date'}
 
