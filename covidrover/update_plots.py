@@ -31,7 +31,7 @@ def main():
     histarrays=plot_data.plot_2d_hist(stats_maps,title_hist2d,'IMD','Cases',xbins,ybins)
 
 
-    cases_area_plot=plot_data.plot_chloropleth(stats_maps_json,'Cases','Lab-Confirmed COVID-19 Cases By Area in England',hover_fields,0,3500,True)
+    cases_area_plot=plot_data.plot_chloropleth(stats_maps_json,'Cases','Lab-Confirmed COVID-19 Cases By Area in England',hover_fields,0,4000,True,custom_ticks=np.arange(0,4000,500))
     imd_area_plot=plot_data.plot_chloropleth(stats_maps_json,'IMD','Average Index of Multiple Deprivation By Lower Tier Local Authority in England',hover_fields,0,50,True,)
     imd_norm_area_plot=plot_data.plot_chloropleth(stats_maps_json,'IMDNorm','Normalised Average Index of Multiple Deprivation By Lower Tier Local Authority in England',hover_fields_norm,0,1,True)
 
