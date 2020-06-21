@@ -18,7 +18,7 @@ class TestRequests():
 
 class TestFilesExist():
     test_deprivationdata='data/deprivation_index_by_area.csv'
-    test_textcsv='data/csvText.csv'
+    test_textcsv='tests/inputs/csvText.csv'
     test_deaths_gender_deprivationdecile='data/deaths_by_gender_deprivationDecile.csv'
     test_deaths_regions='data/mortality_stats_byArea_EnglandWales_MarchMay2020.csv'
 
@@ -39,7 +39,7 @@ class TestDataFames():
 
 
     def test_generate_dataframe_from_csv(self):
-        df = self.generate_dataframe_from_csv('data/csvText.csv')
+        df = self.generate_dataframe_from_csv('tests/inputs/csvText.csv')
         expected_columns = ["Area name","Area code","Area type",
                         "Specimen date","Daily lab-confirmed cases",
                         "Previously reported daily cases","Change in daily cases",
@@ -77,7 +77,29 @@ class TestDataFames():
         assert cleanedcolumns == expectedcolumns
 
 class TestGeoDataFrames():
-    test_geo_file='data/geofiles/test_geo.shp'
+    test_geo_file='tests/inputs/geofiles/test_geo.shp'
+    test_fake_path='tests/inputs/test_fake_geo.shp'    
+    # from an arcGIS json request for the liverpool area code
+    test_liverpool_json='tests/inputs/test_geo_json.json'
+    def test_get_geo_file_exists(self):
+        assert os.path.exists(self.test_geo_file)
+    
     def test_get_geo_data(self):
         test_geo_df=get_data.get_geo_data(self.test_geo_file)
         assert isinstance(test_geo_df,geopandas.geodataframe.GeoDataFrame)
+
+    def test_get_geomap_path(self):
+        output_geo_path=get_data.get_geomap_path(self.test_fake_path,self.test_liverpool_json)
+        assert os.path.exists(output_geo_path)
+        fake_path_base = output_geo_path.rsplit('.',1)[0]
+        fake_path_ext =output_geo_path.rsplit('.',1)[1]
+        if (fake_path_ext == "shp"):
+            # will create extra files
+            for ext in [".cpg",".prj",".dbf",".shx"]:
+                os.remove(fake_path_base+ext)
+        os.remove(output_geo_path)
+
+
+    
+
+    

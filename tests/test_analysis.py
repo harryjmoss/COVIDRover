@@ -16,7 +16,7 @@ def test_merge_by_area():
     assert len(merged.columns) == 12
 
 def test_get_latest_date():
-    csv_dataframe = pd.read_csv('data/csvText.csv') # test csv in data/
+    csv_dataframe = pd.read_csv('tests/inputs/csvText.csv') # test csv in data/
     latestdate='2020-06-17'
     csv_dataframe=csv_dataframe[csv_dataframe['Specimen date']==csv_dataframe['Specimen date'].max()]
     csv_dataframe=csv_dataframe.dropna(axis=1,how='all')

@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import geopandas as gpd
-import requests, sys, fiona
+import requests, sys, fiona, os
 from io import StringIO
 
 def get_latest_dataframes(requrl):
@@ -11,9 +11,18 @@ def get_latest_dataframes(requrl):
     return dataframe
 
 def get_geo_data(geo_file):
+    # geo_file can also be a url!
     geo_df=gpd.read_file(geo_file)
     return geo_df
 
+def get_geomap_path(geopath,geo_url):
+    if not(os.path.exists(geopath)):
+        print("Getting geographical information...")
+        geo_dataframe=get_geo_data(geo_url)
+        geo_dataframe=geo_dataframe[['lad19cd','geometry']]
+        geo_dataframe.columns=['Area code','geometry']  
+        geo_dataframe.to_file(geopath)
+    return geopath
 
 def clean_deprivation_area_df(dep_df):
     dep_df=dep_df.iloc[:, : 3]
