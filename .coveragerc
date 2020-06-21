@@ -5,7 +5,7 @@ exclude_lines =
 [run]
 omit =
 	covidrover/__main__.py
-	covidrover/run.py
+	covidrover/update_plots.py
 	covidrover/setup.py
 	covidrover/__init__.py
 	covidrover*/__init__.py
