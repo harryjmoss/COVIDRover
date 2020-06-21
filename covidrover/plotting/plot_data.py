@@ -38,20 +38,6 @@ def get_plots(stats_maps,stats_maps_json):
     # plot an n * n bin 2d histogram with variables of your choice:
     title_string="Frequency of case numbers as a function of IMD"
     histarrays=plot_2d_hist(stats_maps,title_string,'IMD','Cases',10)
-
-
-    test_title="test_hist"
-    test_xlabel="test_x"
-    test_ylabel="test_y"
-    random_vals=np.random.rand(1,2)
-    test_dataframe=pd.DataFrame(random_vals,columns=[test_xlabel,test_ylabel])
-
-   
-    test_hist_arrays=plot_2d_hist(test_dataframe,test_title,
-                    test_xlabel,test_ylabel,10,write_file=False)
     
-    print(test_hist_arrays.shape)
-
-
     return
 
