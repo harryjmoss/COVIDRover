@@ -13,7 +13,7 @@ from bokeh.models.tickers import FixedTicker, BasicTicker
 
 
 
-def plot_2d_hist(geodataframe,hist_title,xvar,yvar,nbins,mincases=1,write_file=True):
+def plot_2d_hist(geodataframe,hist_title,xvar,yvar,xbins,ybins,mincases=1,write_file=True):
     # set up figure and axis objects    
     plt.figure()
     ax=plt.gca()
@@ -23,6 +23,9 @@ def plot_2d_hist(geodataframe,hist_title,xvar,yvar,nbins,mincases=1,write_file=T
     # get numpy arrays out of dataframe
     xdata = geodataframe[xvar].to_numpy()
     ydata = geodataframe[yvar].to_numpy()
+    nbins=[xbins,ybins]
+    ax.set_yticks(ybins)
+    ax.set_xticks(xbins)
     # plot the 2d hist with the variables specified
     two_dim_hist=ax.hist2d(xdata,ydata,bins=nbins,cmin=mincases,cmap='viridis')
     # label the axes
@@ -37,7 +40,7 @@ def plot_2d_hist(geodataframe,hist_title,xvar,yvar,nbins,mincases=1,write_file=T
 
     if(write_file):
         output_file_name = "output/png/"+hist_title.title().replace(' ','')+".png"
-        plt.savefig(output_file_name)
+        plt.savefig(output_file_name,dpi=300)
     return two_dim_hist
 
 
@@ -85,7 +88,6 @@ def plot_chloropleth(json_map_df,plotfield,plot_title,hover_fields,cbar_low_y,cb
 
 def setup_plots():
     print("Generating plots...")
-    # plot an n * n bin 2d histogram with variables of your choice:
     hover_fields_standard={'Area':'@Area','Average IMD':'@IMD','Cases':'@Cases','Date':'@Date'}
     hover_fields_imd_norm={'Area':'@Area','Normalised Average IMD':'@IMDNorm','Cases':'@Cases','Date':'@Date'}
 

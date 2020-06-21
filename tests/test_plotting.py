@@ -6,12 +6,14 @@ def test_plot_2d_hist():
     test_title="title"
     test_xlabel="test_x"
     test_ylabel="test_y"
+    test_xbins=np.arange(0,10,5)
+    test_ybins=np.arange(0,10,5)
     random_vals=np.random.rand(1,2)
     test_dataframe=pd.DataFrame(random_vals,columns=[test_xlabel,test_ylabel])
 
    # this creates a png
     test_hist_arrays=plot_data.plot_2d_hist(test_dataframe,test_title,
-                    test_xlabel,test_ylabel,10,write_file=False)
+                    test_xlabel,test_ylabel,test_xbins,test_ybins,write_file=False)
     assert len(test_hist_arrays) > 0
 
 def test_plot_chloropleth():

@@ -2,6 +2,7 @@ from covidrover.dataprep import get_data
 from covidrover.analysis import analyse_data
 from covidrover.plotting import plot_data
 from covidrover import setup
+import numpy as np
 import time
 def main():
     start_timer = time.time()
@@ -12,16 +13,24 @@ def main():
     # UK Gov covid deaths data:
     deaths_url = "https://coronavirus.data.gov.uk/downloads/csv/coronavirus-deaths_latest.csv"
    
+    # England & Wales mortality statistics by deprivation decile between March and May 2020
+    marmay_deaths_imd_deciles = "data/deaths_by_gender_deprivationDecile.csv"
+    
     # Get the data
-    map_df, cases, deaths, areaIMD = get_data.prepare_data(geomap_path,cases_url,deaths_url)
+    map_df, cases, deaths, areaIMD, deaths_imd = get_data.prepare_data(geomap_path,cases_url,deaths_url,marmay_deaths_imd_deciles)
     # Prepare the data, combine and calculate variables to plot
     stats_maps,stats_maps_json = analyse_data.analyse(map_df,cases,deaths,areaIMD)
     
     # Plot the data!
     # Sets up the hover fields for the chloropleth map plots
     hover_fields,hover_fields_norm =plot_data.setup_plots()
+
+    xbins=np.arange(0,55,5)
+    ybins=np.arange(0,4000,500)
     title_hist2d = "Frequency of case numbers as a function of IMD"
-    histarrays=plot_data.plot_2d_hist(stats_maps,title_hist2d,'IMD','Cases',10)
+    histarrays=plot_data.plot_2d_hist(stats_maps,title_hist2d,'IMD','Cases',xbins,ybins)
+
+
     cases_area_plot=plot_data.plot_chloropleth(stats_maps_json,'Cases','Lab-Confirmed COVID-19 Cases By Area in England',hover_fields,0,3500,True)
     imd_area_plot=plot_data.plot_chloropleth(stats_maps_json,'IMD','Average Index of Multiple Deprivation By Lower Tier Local Authority in England',hover_fields,0,50,True,)
     imd_norm_area_plot=plot_data.plot_chloropleth(stats_maps_json,'IMDNorm','Normalised Average Index of Multiple Deprivation By Lower Tier Local Authority in England',hover_fields_norm,0,1,True)

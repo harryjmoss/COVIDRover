@@ -27,16 +27,17 @@ def clean_deprivation_area_df(dep_df):
     area_dep=dep_df[['Area code','IMD']]
     return area_dep
     
-def prepare_data(geo_path,cases_url,deaths_url):
+def prepare_data(geo_path,cases_url,deaths_url,deaths_imd_deciles):
     print("Preparing input data...")
     geography=get_geo_data(geo_path)
     cases=get_latest_dataframes(cases_url)
     deaths=get_latest_dataframes(deaths_url)
+    deaths_imd=pd.read_csv(deaths_imd_deciles)
 
     local_area_deprivation="data/deprivation_index_by_area.csv"
     deprivation_df=pd.read_csv(local_area_deprivation)
-    areaIMD=clean_deprivation_area_df(deprivation_df)
+    area_imd=clean_deprivation_area_df(deprivation_df)
 
-    return geography, cases, deaths, areaIMD
+    return geography, cases, deaths, area_imd, deaths_imd
 
 
