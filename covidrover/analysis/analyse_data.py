@@ -20,10 +20,11 @@ def get_latest_data(merged_data):
     latestcases=latestcases.sort_values(by='IMD') # sort by IMD score
     # Reset the index
     latestcases.index=np.arange(0,len(latestcases))
+    latestcases['IMDNorm']=latestcases['IMD']/(latestcases['IMD'].max())
     # Reset column names for ease of use
-    latestcases.columns=['Area name', 'Area code', 
+    latestcases.columns=['Area', 'Area code', 
                         'Date','Cases',
-                        'RatePer100k','IMD']
+                        'RatePer100k','IMD','IMDNorm']
     return latestcases
 
 def convert_to_json_out(geodf):
@@ -31,7 +32,6 @@ def convert_to_json_out(geodf):
     json_info = json.loads(geodf.to_json())
     #Convert to a string-like object
     json_out = json.dumps(json_info)
-    print(type(json_out))
     return json_out
 
 def analyse(mapdata,cases,deaths,area_imd):
