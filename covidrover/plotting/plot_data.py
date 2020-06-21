@@ -79,7 +79,13 @@ def plot_deaths_imd_decile(deaths_imd,hist_title,xaxis_label,yaxis_label,write_f
 
 def plot_chloropleth(json_map_df,plotfield,plot_title,hover_fields,cbar_low_y,cbar_high_y,save_output=True,custom_ticks=None):
     geosource = GeoJSONDataSource(geojson = json_map_df)
-    palette = bokeh.palettes.viridis(10)
+    if custom_ticks is not None:
+        # create colour bar with custom tick labels if provided
+        cbar_ticker = FixedTicker(ticks=custom_ticks)
+        palette = bokeh.palettes.viridis(len(custom_ticks))
+    else:
+        cbar_ticker=BasicTicker()
+        palette = bokeh.palettes.viridis(10)
     palette = palette[::-1]  
     # Map range of numbers to a colour palette
     color_mapper = LinearColorMapper(palette = palette, low=cbar_low_y, high=cbar_high_y)
@@ -87,11 +93,8 @@ def plot_chloropleth(json_map_df,plotfield,plot_title,hover_fields,cbar_low_y,cb
     # expects a dictionary of hover fields items 
     fields_tuple = list(hover_fields.items())
     hover = HoverTool(tooltips = fields_tuple)
-    if custom_ticks is not None:
-        # create colour bar with custom tick labels if provided
-        cbar_ticker = FixedTicker(ticks=custom_ticks)
-    else:
-        cbar_ticker=BasicTicker()
+    
+        
     #Create a colour bar with default tick labels
     color_bar = ColorBar(color_mapper=color_mapper,ticker=cbar_ticker,label_standoff=8,width = 500, height = 20,
     border_line_color=None,location = (0,0), orientation = 'horizontal')
