@@ -1,13 +1,14 @@
 from covidrover.dataprep import get_data
 from covidrover.analysis import analyse_data
 from covidrover.plotting import plot_data
-from covidrover import setup
 import numpy as np
 import time
 def main():
     start_timer = time.time()
-    # This file is retrieved in setup.py and saved to the data directory if it does not already exist
-    geomap_path=setup.get_geomap_path()
+    # This file is retrieved in plot_data and saved to the data directory if it does not already exist
+    geopath="data/geofiles/geofile.shp"
+    geo_url="https://opendata.arcgis.com/datasets/a8531598f29f44e7ad455abb6bf59c60_0.geojson"
+    geomap_path=get_data.get_geomap_path(geopath,geo_url)
     # UK Gov covid cases data:
     cases_url = "https://coronavirus.data.gov.uk/downloads/csv/coronavirus-cases_latest.csv"
     # UK Gov covid deaths data:
