@@ -1,5 +1,5 @@
 import geopandas as gpd
-import fiona, os
+import os
 
 def get_geo_dataframe_from_url(geo_url):
     geo_df=gpd.read_file(geo_url)

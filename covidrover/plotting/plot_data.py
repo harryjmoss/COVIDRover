@@ -3,14 +3,14 @@ import geopandas as gpd
 import matplotlib.pyplot as plt
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 
+import numpy as np
 
-def plot_2d_hist(geodataframe,hist_title,xvar,yvar,nbins,mincases=1):
+
+def plot_2d_hist(geodataframe,hist_title,xvar,yvar,nbins,mincases=1,write_file=True):
     # set up figure and axis objects    
     plt.figure()
     ax=plt.gca()
-
-# Creates a right-hand axis with fractional size of ax and with fixed padding
-
+    # Creates a right-hand axis with fractional size of ax and with fixed padding
     plt.figure(1)
     ax=plt.gca()
     # get numpy arrays out of dataframe
@@ -28,15 +28,30 @@ def plot_2d_hist(geodataframe,hist_title,xvar,yvar,nbins,mincases=1):
     cbar.ax.set_ylabel('Number of events',labelpad=15,rotation=270)
     plt.tight_layout()
 
-    output_file_name = "output/"+hist_title.title().replace(' ','')+".png"
-    plt.savefig(output_file_name)
-    return two_dim_hist[0],two_dim_hist[1],two_dim_hist[2]
+    if(write_file):
+        output_file_name = "output/"+hist_title.title().replace(' ','')+".png"
+        plt.savefig(output_file_name)
+    return two_dim_hist
 
 def get_plots(stats_maps,stats_maps_json):
     print("Generating plots...")
     # plot an n * n bin 2d histogram with variables of your choice:
     title_string="Frequency of case numbers as a function of IMD"
-    plot_2d_hist(stats_maps,title_string,'IMD','Cases',10)
+    histarrays=plot_2d_hist(stats_maps,title_string,'IMD','Cases',10)
+
+
+    test_title="test_hist"
+    test_xlabel="test_x"
+    test_ylabel="test_y"
+    random_vals=np.random.rand(1,2)
+    test_dataframe=pd.DataFrame(random_vals,columns=[test_xlabel,test_ylabel])
+
+   
+    test_hist_arrays=plot_2d_hist(test_dataframe,test_title,
+                    test_xlabel,test_ylabel,10,write_file=False)
+    
+    print(test_hist_arrays.shape)
+
 
     return
 
