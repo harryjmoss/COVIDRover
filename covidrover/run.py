@@ -27,6 +27,6 @@ def main():
     imd_norm_area_plot=plot_data.plot_chloropleth(stats_maps_json,'IMDNorm','Normalised Average Index of Multiple Deprivation By Lower Tier Local Authority in England',hover_fields_norm,0,1,True)
 
     print("--- Finished running in %s seconds ---" % (time.time() - start_timer))
-
+    return
 if __name__ == '__main__':
     main()

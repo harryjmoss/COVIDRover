@@ -44,34 +44,29 @@ def plot_2d_hist(geodataframe,hist_title,xvar,yvar,nbins,mincases=1,write_file=T
 def plot_chloropleth(json_map_df,plotfield,plot_title,hover_fields,cbar_low_y,cbar_high_y,save_output=True,custom_ticks=None):
     geosource = GeoJSONDataSource(geojson = json_map_df)
     palette = bokeh.palettes.viridis(10)
-    palette = palette[::-1]
-    
+    palette = palette[::-1]  
     # Map range of numbers to a colour palette
     color_mapper = LinearColorMapper(palette = palette, low=cbar_low_y, high=cbar_high_y)
-
     #Add a hover tooltip on final plot
     # expects a dictionary of hover fields items 
     fields_tuple = list(hover_fields.items())
     hover = HoverTool(tooltips = fields_tuple)
-
     if custom_ticks is not None:
         # create colour bar with custom tick labels if provided
         cbar_ticker = FixedTicker(ticks=custom_ticks)
     else:
         cbar_ticker=BasicTicker()
-
     #Create a colour bar with default tick labels
     color_bar = ColorBar(color_mapper=color_mapper,ticker=cbar_ticker,label_standoff=8,width = 500, height = 20,
     border_line_color=None,location = (0,0), orientation = 'horizontal')
-
     # Start plotting!
-    map_plot = figure(title = 'Lab-Confirmed COVID-19 Cases By Area', plot_height = 700 , plot_width = 500, toolbar_location = None,tools=[hover])
+    map_plot = figure(title = plot_title, plot_height = 700 , plot_width = 500, toolbar_location = None,tools=[hover])
     #p.add_tile(tile_provider)
     map_plot.xgrid.grid_line_color = None
     map_plot.ygrid.grid_line_color = None
     #Add patch renderer to figure.
     map_plot.patches('xs','ys', source = geosource,fill_color = {'field' :plotfield, 'transform' : color_mapper},
-          line_color = 'black', line_width = 0.25, fill_alpha = 1)
+          line_color = 'black', line_width = 0.1, fill_alpha = .8)
     #Specify figure layout.
     map_plot.add_layout(color_bar, 'below')
     map_plot.xaxis.visible=False
