@@ -77,7 +77,7 @@ class TestDataFames():
         assert cleanedcolumns == expectedcolumns
 
 class TestGeoDataFrames():
-    test_geo_file='tests/inputs/geofiles/test_geo.shp'
+    test_geo_file='tests/inputs/test_geo.shp'
     test_fake_path='tests/inputs/test_fake_geo.shp'    
     # from an arcGIS json request for the liverpool area code
     test_liverpool_json='tests/inputs/test_geo_json.json'
