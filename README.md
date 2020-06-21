@@ -31,9 +31,12 @@ The file `run.py` calls [covidrover/update_plots.py](covidrover/update_plots.py)
 - Interactive plots are produced with [Bokeh](https://docs.bokeh.org/en/latest/index.html) as `.html` files in [output/html](output/html)
 
 ## Sample output:
-![](output/examples/Covid-19MortalityPer100000PeopleByDeprivationDecileBetweenMarchAndMay2020.png?raw=true)![](output/examples/FrequencyOfCaseNumbersAsAFunctionOfImd.png?raw=true)
+![]()![]()
 
-![](output/examples/Cases_2020-06-21_map.png?raw=true)![](output/examples/NormalisedIMD_Cases_2020-06-21.png?raw=true)
+<img src="output/examples/Covid-19MortalityPer100000PeopleByDeprivationDecileBetweenMarchAndMay2020.png?raw=true" alt="drawing" height="200"/><img src="output/examples/FrequencyOfCaseNumbersAsAFunctionOfImd.png?raw=true" alt="drawing" height="200"/>
+
+<img src="output/examples/Cases_2020-06-21_map.png?raw=true" alt="drawing" height="300"/><img src="output/examples/NormalisedIMD_Cases_2020-06-21.png?raw=true" alt="drawing" height="300"/>
+
 
 
 
