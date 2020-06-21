@@ -29,15 +29,15 @@ def test_get_latest_data():
             'Daily lab-confirmed cases',
             'Cumulative lab-confirmed cases',
             'Cumulative lab-confirmed cases rate',
-            'IMD']
+            'IMD','IMDNorm']
     test_list=[['Hart','E07000089',
             'Lower tier local authority','2020-06-19',
-            np.nan,186,193.2,5.544]]
+            np.nan,186,193.2,5.544,0.005]]
     test_dataframe=pd.DataFrame(test_list,columns=test_columns)
     test_new_dataframe=analyse_data.get_latest_data(test_dataframe)
-    expected_columns=['Area name', 'Area code', 
+    expected_columns=['Area', 'Area code', 
                     'Date','Cases',
-                    'RatePer100k','IMD']
+                    'RatePer100k','IMD','IMDNorm']
     assert test_new_dataframe.columns.tolist() == expected_columns
 
 
