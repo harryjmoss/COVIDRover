@@ -38,11 +38,10 @@ def plot_2d_hist(geodataframe,hist_title,xvar,yvar,xbins,ybins,mincases=1,write_
     cbar.ax.set_ylabel('Number of events',labelpad=15,rotation=270)
     # sorts out padding, just aesthetic
     plt.tight_layout()
-
+    output_file_name = "output/png/"+hist_title.title().replace(' ','')+".png"
     if(write_file):
-        output_file_name = "output/png/"+hist_title.title().replace(' ','')+".png"
         plt.savefig(output_file_name,dpi=300)
-    return two_dim_hist
+    return output_file_name
 
 def plot_deaths_imd_decile(deaths_imd,hist_title,xaxis_label,yaxis_label,write_file=True):
     # Sort the dataframe into All, Women, Men
@@ -111,14 +110,11 @@ def plot_chloropleth(json_map_df,plotfield,plot_title,hover_fields,cbar_low_y,cb
     map_plot.xaxis.visible=False
     map_plot.yaxis.visible=False
     #Save the figure
+    outfile_name="output/html/"+plot_title.title().replace(' ','')+".html"
     if(save_output):
-        outfile_name="output/html/"+plot_title.title().replace(' ','')+".html"
         output_file(outfile_name)
         save(map_plot)
-    else:
-        show(map_plot)
-
-    return map_plot
+    return outfile_name
 
     
 
