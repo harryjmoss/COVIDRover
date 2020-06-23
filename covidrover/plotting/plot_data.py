@@ -79,7 +79,6 @@ def plot_deaths_imd_decile(deaths_imd,hist_title,xaxis_label,yaxis_label,write_f
 
     output_file_name = "output/png/"+hist_title.title().replace(' ','')+".png"
     web_file_name = "covidrover/static/png/"+hist_title.title().replace(' ','')+".png"
-
     # write file
     if(write_file):
         plt.savefig(output_file_name,dpi=300)
