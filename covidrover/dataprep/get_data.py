@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import geopandas as gpd
-import requests, sys, fiona, os
+import requests, os
 from io import StringIO
 
 def get_latest_dataframes(requrl):

@@ -1,13 +1,8 @@
 import numpy as np
-import pandas as pd
-import geopandas as gpd
 import matplotlib.pyplot as plt
-from mpl_toolkits.axes_grid1 import make_axes_locatable
-import json
 # bokeh imports...
-from bokeh.io import show, output_file, save
+from bokeh.io import output_file, save
 from bokeh.plotting import figure
-from bokeh.embed import json_item
 import bokeh.palettes
 from bokeh.models import GeoJSONDataSource, LinearColorMapper, ColorBar, HoverTool
 from bokeh.models.tickers import FixedTicker, BasicTicker
