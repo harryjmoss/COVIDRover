@@ -3,7 +3,7 @@ from covidrover.analysis import analyse_data
 from covidrover.plotting import plot_data
 import numpy as np
 import time
-def main():
+def run_covidrover():
     start_timer = time.time()
     # This file is retrieved in plot_data and saved to the data directory if it does not already exist
     geopath="data/geofiles/geofile.shp"
@@ -49,4 +49,4 @@ def main():
     print("--- Finished running in %s seconds ---" % (time.time() - start_timer))
     return bokehfiles,imgfiles
 if __name__ == '__main__':
-    main()
+    run_covidrover()
