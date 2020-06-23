@@ -1,10 +1,6 @@
-import os, sys
-from covidrover import update_plots
 from datetime import datetime
 from jinja2 import Template
-from bokeh.resources import CDN
-from bokeh.embed import components
-from flask import Flask, request, render_template
+from flask import render_template
 from flask import current_app as app
 
 def update_timer():
