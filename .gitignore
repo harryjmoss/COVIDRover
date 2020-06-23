@@ -7,7 +7,9 @@ data/*xlsx
 *.pyc
 *.geojson
 covidrover/static/bokeh/*
+!covidrover/static/bokeh/.gitkeep
 covidrover/static/png/*
+!covidrover/static/png/.gitkeep
 notebooks/.ipynb_checkpoints/
 data/geofiles/geofile.*
 __pycache__/
@@ -21,4 +23,3 @@ htmlcov/
 dist/
 build/
 *.egg-info/
-covidrover/static/*
