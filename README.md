@@ -28,7 +28,7 @@ You can also import this package and run it from this directory with
 The file `generate_plots.py` calls [covidrover/update_plots.py](covidrover/update_plots.py) and produces a series of plots using available UK government COVID-19 statistics. 
 
 - PNG plots are produced with [matplotlib](https://matplotlib.org/) and written to [output/png](output/png)
-- Interactive plots are produced with [Bokeh](https://docs.bokeh.org/en/latest/index.html) as `.html` files in [output/html](output/html)
+- Interactive plots are produced with [Bokeh](https://docs.bokeh.org/en/latest/index.html) as `.html` files in [covidrover/static/bokeh](covidrover/static/bokeh)
 
 ## Web application
 This application includes a Flask backend that generates a static site and displays the output of COVIDRover. To run the Flask app, call  

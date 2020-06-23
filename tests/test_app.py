@@ -4,6 +4,7 @@ from covidrover import create_app
 
 class TestApp():
     app = create_app(dev=True)
+    #app.template_folder='covidrover/templates/'
     app.config["TESTING"] = True
     app.config["DEBUG"] = False
     test_app = app.test_client()

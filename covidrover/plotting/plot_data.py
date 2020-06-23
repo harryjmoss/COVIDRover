@@ -41,7 +41,7 @@ def plot_2d_hist(geodataframe,hist_title,xvar,yvar,xbins,ybins,mincases=1,write_
     # sorts out padding, just aesthetic
     plt.tight_layout()
     output_file_name = "output/png/"+hist_title.title().replace(' ','')+".png"
-    web_file_name = "covidrover/static/"+hist_title.title().replace(' ','')+".png"
+    web_file_name = "covidrover/static/png/"+hist_title.title().replace(' ','')+".png"
 
     if(write_file):
         plt.savefig(output_file_name,dpi=300)
@@ -78,7 +78,7 @@ def plot_deaths_imd_decile(deaths_imd,hist_title,xaxis_label,yaxis_label,write_f
     plt.legend(loc="upper right")
 
     output_file_name = "output/png/"+hist_title.title().replace(' ','')+".png"
-    web_file_name = "covidrover/static/"+hist_title.title().replace(' ','')+".png"
+    web_file_name = "covidrover/static/png/"+hist_title.title().replace(' ','')+".png"
 
     # write file
     if(write_file):
@@ -121,7 +121,7 @@ def plot_chloropleth(json_map_df,plotfield,plot_title,hover_fields,cbar_low_y,cb
     map_plot.xaxis.visible=False
     map_plot.yaxis.visible=False
     #Save the figure
-    outfile_name="covidrover/static/"+plot_title.title().replace(' ','')+".html"
+    outfile_name="covidrover/static/bokeh/"+plot_title.title().replace(' ','')+".html"
     if(save_output):
         output_file(outfile_name)
         save(map_plot)

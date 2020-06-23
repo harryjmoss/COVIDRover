@@ -6,7 +6,8 @@ data/coronavirus*
 data/*xlsx
 *.pyc
 *.geojson
-*.html
+covidrover/static/bokeh/*
+covidrover/static/png/*
 notebooks/.ipynb_checkpoints/
 data/geofiles/geofile.*
 __pycache__/

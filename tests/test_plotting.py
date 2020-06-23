@@ -51,25 +51,31 @@ def test_plot_deaths_imd_decile():
     test_df=pd.DataFrame(test_list,columns=test_cols)
 
     output_name=plot_data.plot_deaths_imd_decile(test_df,test_title,test_xaxis_label,test_yaxis_label,write_file=False)
-    expected_output_name="covidrover/static/"+test_title.title().replace(' ','')+".png"
-    assert output_name == expected_output_name
+    expected_output_name="covidrover/static/png/"+test_title.title().replace(' ','')+".png"
+    assert output_name == expected_output_name    
 
 def test_plot_deaths_imd_decile_writefile():
     test_list=[['Persons', 1, 4801, 128.3, 124.7, 132.0],
     ['Males', 2, 5123, 124.8, 121.4, 128.3],
     ['Females', 3, 5100, 114.5, 111.3, 117.6]]
     test_cols=['Sex', 'Decile', 'Deaths', 'Rate', 'LowerCI', 'UpperCI']
-    test_title="foo"
+    test_title="bar"
     test_xaxis_label="bar"
     test_yaxis_label="fizz"
     test_df=pd.DataFrame(test_list,columns=test_cols)
     
-    output_name=plot_data.plot_deaths_imd_decile(test_df,test_title,test_xaxis_label,test_yaxis_label,write_file=True)
-    expected_output_name="covidrover/static/"+test_title.title().replace(' ','')+".png"
-    file_made = os.path.exists(expected_output_name)
-    assert file_made
-    if(file_made):
+    _output_name=plot_data.plot_deaths_imd_decile(test_df,test_title,test_xaxis_label,test_yaxis_label,write_file=True)
+    expected_weboutput_name="covidrover/static/png/"+test_title.title().replace(' ','')+".png"
+    expected_output_name="output/png/"+test_title.title().replace(' ','')+".png"
+
+    outfile_made = os.path.exists(expected_output_name)
+    weboutfile_made = os.path.exists(expected_weboutput_name)
+    files_made = outfile_made * weboutfile_made
+    assert files_made
+    if(files_made):
         os.remove(expected_output_name)
+        os.remove(expected_weboutput_name)
+
 
 
 def test_geojson_generation():

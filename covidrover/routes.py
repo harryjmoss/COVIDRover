@@ -17,28 +17,28 @@ def home():
 
 @app.route('/casesvsimd')
 def cases_imd_2dhist():
-    cmap="static/FrequencyOfCaseNumbersAsAFunctionOfImd.png"
+    cmap="static/png/FrequencyOfCaseNumbersAsAFunctionOfImd.png"
     return render_template("plotimage.html",lastUpdate=app.last_update,colormap=cmap,alttext="2D Histogram of Cases vs IMD")
 
 
 @app.route('/deathsvsdecile')
 def deaths_vs_imd_dec():
-    cmap="static/Covid-19MortalityPer100000PeopleByDeprivationDecileBetweenMarchAndMay2020.png"
+    cmap="static/png/Covid-19MortalityPer100000PeopleByDeprivationDecileBetweenMarchAndMay2020.png"
     return render_template("plotimage.html",lastUpdate=app.last_update,colormap=cmap)
 
 @app.route('/plotcases')
 def bokeh_plot_cases():
-    cmap="static/Lab-ConfirmedCovid-19CasesByAreaInEngland.html"
+    cmap="static/bokeh/Lab-ConfirmedCovid-19CasesByAreaInEngland.html"
     return render_template("embedbokeh.html",lastUpdate=app.last_update,colormap=cmap)
 
 @app.route('/plotimd')
 def bokeh_plot_imd():
-    cmap="static/AverageIndexOfMultipleDeprivationByLowerTierLocalAuthorityInEngland.html"
+    cmap="static/bokeh/AverageIndexOfMultipleDeprivationByLowerTierLocalAuthorityInEngland.html"
     return render_template("embedbokeh.html",lastUpdate=app.last_update,colormap=cmap)
 
 @app.route('/plotimdnorm')
 def bokeh_plot_imdnorm():
-    cmap="static/NormalisedAverageIndexOfMultipleDeprivationByLowerTierLocalAuthorityInEngland.html"
+    cmap="static/bokeh/NormalisedAverageIndexOfMultipleDeprivationByLowerTierLocalAuthorityInEngland.html"
     return render_template("embedbokeh.html",lastUpdate=app.last_update,colormap=cmap)
 
 @app.errorhandler(404)
