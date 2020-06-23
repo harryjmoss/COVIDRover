@@ -3,10 +3,11 @@ import pandas as pd
 import geopandas as gpd
 import matplotlib.pyplot as plt
 from mpl_toolkits.axes_grid1 import make_axes_locatable
-
+import json
 # bokeh imports...
 from bokeh.io import show, output_file, save
 from bokeh.plotting import figure
+from bokeh.embed import json_item
 import bokeh.palettes
 from bokeh.models import GeoJSONDataSource, LinearColorMapper, ColorBar, HoverTool
 from bokeh.models.tickers import FixedTicker, BasicTicker
@@ -15,6 +16,7 @@ from bokeh.models.tickers import FixedTicker, BasicTicker
 
 def plot_2d_hist(geodataframe,hist_title,xvar,yvar,xbins,ybins,mincases=1,write_file=True):
     # set up figure and axis objects    
+    plt.ioff() # turn off interactive mode
     plt.figure()
     ax=plt.gca()
     # Creates a right-hand axis with fractional size of ax and with fixed padding
@@ -39,9 +41,13 @@ def plot_2d_hist(geodataframe,hist_title,xvar,yvar,xbins,ybins,mincases=1,write_
     # sorts out padding, just aesthetic
     plt.tight_layout()
     output_file_name = "output/png/"+hist_title.title().replace(' ','')+".png"
+    web_file_name = "covidrover/static/"+hist_title.title().replace(' ','')+".png"
+
     if(write_file):
         plt.savefig(output_file_name,dpi=300)
-    return output_file_name
+        plt.savefig(web_file_name,dpi=300)
+
+    return web_file_name
 
 def plot_deaths_imd_decile(deaths_imd,hist_title,xaxis_label,yaxis_label,write_file=True):
     # Sort the dataframe into All, Women, Men
@@ -51,6 +57,7 @@ def plot_deaths_imd_decile(deaths_imd,hist_title,xaxis_label,yaxis_label,write_f
 
     # set up figure and axis
     plt.figure(None,[10,8]) # figure number, [width,height (inches)]
+    plt.ioff() # turn off interactive mode and stop matplotlib trying to display plots
     ax=plt.gca()
     
     # Plot the lines of the mean fatality rate for All people, women and men
@@ -71,10 +78,14 @@ def plot_deaths_imd_decile(deaths_imd,hist_title,xaxis_label,yaxis_label,write_f
     plt.legend(loc="upper right")
 
     output_file_name = "output/png/"+hist_title.title().replace(' ','')+".png"
-    # write file, or don't 
+    web_file_name = "covidrover/static/"+hist_title.title().replace(' ','')+".png"
+
+    # write file
     if(write_file):
         plt.savefig(output_file_name,dpi=300)
-    return output_file_name
+        plt.savefig(web_file_name,dpi=300)
+
+    return web_file_name
 
 def plot_chloropleth(json_map_df,plotfield,plot_title,hover_fields,cbar_low_y,cbar_high_y,save_output=True,custom_ticks=None):
     geosource = GeoJSONDataSource(geojson = json_map_df)
@@ -110,7 +121,7 @@ def plot_chloropleth(json_map_df,plotfield,plot_title,hover_fields,cbar_low_y,cb
     map_plot.xaxis.visible=False
     map_plot.yaxis.visible=False
     #Save the figure
-    outfile_name="output/html/"+plot_title.title().replace(' ','')+".html"
+    outfile_name="covidrover/static/"+plot_title.title().replace(' ','')+".html"
     if(save_output):
         output_file(outfile_name)
         save(map_plot)

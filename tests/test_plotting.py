@@ -51,7 +51,7 @@ def test_plot_deaths_imd_decile():
     test_df=pd.DataFrame(test_list,columns=test_cols)
 
     output_name=plot_data.plot_deaths_imd_decile(test_df,test_title,test_xaxis_label,test_yaxis_label,write_file=False)
-    expected_output_name="output/png/"+test_title.title().replace(' ','')+".png"
+    expected_output_name="covidrover/static/"+test_title.title().replace(' ','')+".png"
     assert output_name == expected_output_name
 
 def test_plot_deaths_imd_decile_writefile():
@@ -65,7 +65,7 @@ def test_plot_deaths_imd_decile_writefile():
     test_df=pd.DataFrame(test_list,columns=test_cols)
     
     output_name=plot_data.plot_deaths_imd_decile(test_df,test_title,test_xaxis_label,test_yaxis_label,write_file=True)
-    expected_output_name="output/png/"+test_title.title().replace(' ','')+".png"
+    expected_output_name="covidrover/static/"+test_title.title().replace(' ','')+".png"
     file_made = os.path.exists(expected_output_name)
     assert file_made
     if(file_made):

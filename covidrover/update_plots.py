@@ -41,13 +41,12 @@ def main():
     deaths_decile_imd_yaxis_label="Deprivation decile (1: most deprived, 10: least deprived)"
     deaths_decile_plot=plot_data.plot_deaths_imd_decile(deaths_imd,deaths_decile_imd_title,deaths_decile_imd_xaxis_label,deaths_decile_imd_yaxis_label)
 
-    outfile_names={"2D_Hist":histarrays,
-                "Cases_Area":cases_area_plot,
-                "IMD_Area":imd_area_plot,
-                "IMD_Area_Norm": imd_norm_area_plot,
-                "Deaths_Decile": deaths_decile_plot
-                }
+    bokehfiles=[cases_area_plot,imd_area_plot,imd_norm_area_plot]    
+
+    imgfiles={"2D_Hist":histarrays,
+            "Deaths_Decile": deaths_decile_plot
+            }
     print("--- Finished running in %s seconds ---" % (time.time() - start_timer))
-    return outfile_names
+    return bokehfiles,imgfiles
 if __name__ == '__main__':
     main()
