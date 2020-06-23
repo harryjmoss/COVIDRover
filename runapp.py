@@ -1,6 +1,4 @@
-import os
-import sys
-import atexit
+import os, sys
 from covidrover import app
 from covidrover import update_plots
 from datetime import datetime
@@ -57,5 +55,5 @@ def page_not_found(e):
 
 
 if __name__== "__main__":
-    app.run(debug=True, use_reloader=False)
+    app.run(host='0.0.0.0')
 
