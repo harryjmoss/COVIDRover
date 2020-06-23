@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/harryjmoss/COVIDRover.svg?branch=master)](https://travis-ci.org/harryjmoss/COVIDRover)
 # COVIDRover - a COVID-19 data analysis tool
 
-A Python tool to query the latest available statistics on COVID-19 cases in the UK and perform analysis based on geographical and area deprivation information.
+A Python tool and web application to query the latest available statistics on COVID-19 cases in the UK, perform analysis based on geographical and area deprivation information and plot the results. 
 
 ### Data sources
 - COVID deaths and cases statistics are taken from https://coronavirus.data.gov.uk/ - licensed under the [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/)
@@ -20,15 +20,20 @@ Install dependent packages with:
 The first time the program runs, geographical data is collected as a geoJSON file from the ONS Open Geography Portal if it does not exist in the `data` directory. The geoJSON is trimmed down and saved as a geoJSON file in the the `data` directory for future use. As the file is quite large(!), this (should) only happen the first time you run the package.
 
 ## Running
-The package can be run from the base directory (containing this README) with  
-`python run.py`
+Plot generation can be run from the base directory (containing this README) with  
+`python generate_plots.py`
 You can also import this package and run it from this directory with  
 `python -m covidrover`
 
-The file `run.py` calls [covidrover/update_plots.py](covidrover/update_plots.py) and produces a series of plots using available UK government COVID-19 statistics. 
+The file `generate_plots.py` calls [covidrover/update_plots.py](covidrover/update_plots.py) and produces a series of plots using available UK government COVID-19 statistics. 
 
 - PNG plots are produced with [matplotlib](https://matplotlib.org/) and written to [output/png](output/png)
 - Interactive plots are produced with [Bokeh](https://docs.bokeh.org/en/latest/index.html) as `.html` files in [output/html](output/html)
+
+## Web application
+This application includes a Flask backend that generates a static site and displays the output of COVIDRover. To run the Flask app, call  
+`python runapp.py` from the `COVIDRover/` directory.
+
 
 ## Sample output:
 ![]()![]()
