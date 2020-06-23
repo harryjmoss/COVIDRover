@@ -21,6 +21,8 @@ jobs:
         - pip3 install -U pip
         - pip3 install pytest pytest-cov
         - pip3 install codecov
-install: pip3 install -r requirements.txt # pip3 is OS independent
+install: 
+  - pip3 install -r requirements.txt # pip3 is OS independent
+  - python setup.py -q install
 script: pytest --cov=covidrover tests/
 after_success: codecov
