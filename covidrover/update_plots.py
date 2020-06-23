@@ -3,7 +3,7 @@ from covidrover.analysis import analyse_data
 from covidrover.plotting import plot_data
 import numpy as np
 import time
-def main():
+def run_covidrover():
     start_timer = time.time()
     # This file is retrieved in plot_data and saved to the data directory if it does not already exist
     geopath="data/geofiles/geofile.shp"
@@ -41,7 +41,12 @@ def main():
     deaths_decile_imd_yaxis_label="Deprivation decile (1: most deprived, 10: least deprived)"
     deaths_decile_plot=plot_data.plot_deaths_imd_decile(deaths_imd,deaths_decile_imd_title,deaths_decile_imd_xaxis_label,deaths_decile_imd_yaxis_label)
 
+    bokehfiles=[cases_area_plot,imd_area_plot,imd_norm_area_plot]    
+
+    imgfiles={"2D_Hist":histarrays,
+            "Deaths_Decile": deaths_decile_plot
+            }
     print("--- Finished running in %s seconds ---" % (time.time() - start_timer))
-    return
+    return bokehfiles,imgfiles
 if __name__ == '__main__':
-    main()
+    run_covidrover()
