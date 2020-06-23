@@ -19,7 +19,6 @@ def run_covidrover_plotting():
 
 # get initial variables from covidrover
 bokeh_plots, imgfiles, last_update= run_covidrover_plotting()
-last_update="Now"
 app=app.create_app()
 @app.route('/')
 def home():
