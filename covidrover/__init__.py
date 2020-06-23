@@ -1,12 +1,10 @@
 from flask import Flask
 from flask_bootstrap import Bootstrap
-from flask_appconfig import AppConfig
 from datetime import datetime
 
 def create_app(dev=False):
     app = Flask(__name__)
     Bootstrap(app)
-    AppConfig(app)
     
     if(dev):
         app.config.from_object("config.Development")
