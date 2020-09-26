@@ -2,6 +2,7 @@
 */*pycache*
 *~
 .vscode/
+*.code-workspace
 data/coronavirus*
 data/*xlsx
 *.pyc

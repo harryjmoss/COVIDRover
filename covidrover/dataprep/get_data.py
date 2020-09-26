@@ -3,11 +3,12 @@ import pandas as pd
 import geopandas as gpd
 import requests, os
 from io import StringIO
+from .query_apis import run_api_query
+import json
 
-def get_latest_dataframes(requrl):
-    # Get the latest available covid stats file and read into pandas DataFrame
-    csvtext=requests.get(requrl).text
-    dataframe=pd.read_csv(StringIO(csvtext))
+def get_latest_dataframes(json_out: list):
+    # Get the latest available covid stats and read into pandas DataFrame
+    dataframe = pd.read_json(json.dumps(json_out))
     return dataframe
 
 def get_geo_data(geo_file):
@@ -20,33 +21,32 @@ def get_geomap_path(geopath,geo_url):
         print("Getting geographical information...")
         geo_dataframe=get_geo_data(geo_url)
         geo_dataframe=geo_dataframe[['lad19cd','geometry']]
-        geo_dataframe.columns=['Area code','geometry']  
+        geo_dataframe.columns=['code','geometry']  
         geo_dataframe.to_file(geopath)
     return geopath
 
 def clean_deprivation_area_df(dep_df):
     dep_df=dep_df.iloc[:, : 3]
-    dep_df.columns=['Area code',
-    'Reference area',
+    dep_df.columns=['code',
+    'name',
     'IMD']
-    areaCodeList=dep_df['Area code'].str.rsplit(pat='/',n=1).tolist()
+    areaCodeList=dep_df['code'].str.rsplit(pat='/',n=1).tolist()
     areaCodeList=np.array(areaCodeList)
     areaCodeList=areaCodeList[:,-1]
-    dep_df['Area code']=areaCodeList
-    area_dep=dep_df[['Area code','IMD']]
+    dep_df['code']=areaCodeList
+    area_dep=dep_df[['code','IMD']]
     return area_dep
     
-def prepare_data(geo_path,cases_url,deaths_url,deaths_imd_deciles):
+def prepare_data(geo_path,endpoint_url,deaths_imd_deciles):
     print("Preparing input data...")
     geography=get_geo_data(geo_path)
-    cases=get_latest_dataframes(cases_url)
-    deaths=get_latest_dataframes(deaths_url)
-    deaths_imd=pd.read_csv(deaths_imd_deciles)
+    updated_df = get_latest_dataframes(run_api_query(endpoint_url))
 
+    deaths_imd=pd.read_csv(deaths_imd_deciles)
     local_area_deprivation="data/deprivation_index_by_area.csv"
     deprivation_df=pd.read_csv(local_area_deprivation)
     area_imd=clean_deprivation_area_df(deprivation_df)
 
-    return geography, cases, deaths, area_imd, deaths_imd
+    return geography, updated_df, area_imd, deaths_imd
 
 
