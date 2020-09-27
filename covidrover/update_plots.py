@@ -33,18 +33,48 @@ def run_covidrover():
     ybins = np.arange(0, 4000, 500)
     title_hist2d = "Frequency of case numbers as a function of IMD"
     histarrays = plot_data.plot_2d_hist(
-        stats_maps, title_hist2d, "IMD", "Total cases", xbins, ybins
+        stats_maps, title_hist2d, "IMD", "TotalCases", xbins, ybins
     )
 
     cases_area_plot = plot_data.plot_chloropleth(
         stats_maps_json,
-        "Total cases",
-        "Lab-Confirmed COVID-19 Cases By Area in England",
+        "TotalCases",
+        "Positive COVID-19 PCR tests By Area in England by specimen date",
         hover_fields,
         0,
         4000,
         True,
-        custom_ticks=np.arange(0, 4000, 500),
+        custom_ticks=np.arange(0, 12000, 1000),
+    )
+    case_rate_plot = plot_data.plot_chloropleth(
+        stats_maps_json,
+        "CasesPer100k",
+        "Positive COVID-19 PCR tests By Area in England by specimen date per 100k",
+        hover_fields,
+        0,
+        2000,
+        True,
+        custom_ticks=np.arange(0, 2000, 250),
+    )
+    deaths_area_plot = plot_data.plot_chloropleth(
+        stats_maps_json,
+        "TotalDeaths",
+        "Deaths within 28 days of positive test by date of death",
+        hover_fields,
+        0,
+        1200,
+        True,
+        custom_ticks=np.arange(0, 1200, 100),
+    )
+    death_rate_plot = plot_data.plot_chloropleth(
+        stats_maps_json,
+        "DeathsPer100k",
+        "Deaths within 28 days of positive test by date of death per 100k",
+        hover_fields,
+        0,
+        200,
+        True,
+        custom_ticks=np.arange(0, 200, 25),
     )
     imd_area_plot = plot_data.plot_chloropleth(
         stats_maps_json,
@@ -79,7 +109,14 @@ def run_covidrover():
         deaths_decile_imd_yaxis_label,
     )
 
-    bokehfiles = [cases_area_plot, imd_area_plot, imd_norm_area_plot]
+    bokehfiles = [
+        cases_area_plot,
+        case_rate_plot,
+        deaths_area_plot,
+        death_rate_plot,
+        imd_area_plot,
+        imd_norm_area_plot,
+    ]
 
     imgfiles = {"2D_Hist": histarrays, "Deaths_Decile": deaths_decile_plot}
     print("--- Finished running in %s seconds ---" % (time.time() - start_timer))

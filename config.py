@@ -1,7 +1,11 @@
 class BaseConfig(object):
-  DEBUG = False  
+    DEBUG = False
+
+
 class Development(BaseConfig):
-  DEBUG = True
-  TESTING = True
+    DEBUG = True
+    TESTING = True
+
+
 class Production(BaseConfig):
-  pass
+    pass

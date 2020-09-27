@@ -5,7 +5,13 @@ import matplotlib.pyplot as plt
 from bokeh.io import output_file, save
 from bokeh.plotting import figure
 import bokeh.palettes
-from bokeh.models import GeoJSONDataSource, LinearColorMapper, ColorBar, HoverTool
+from bokeh.models import (
+    GeoJSONDataSource,
+    LinearColorMapper,
+    LogColorMapper,
+    ColorBar,
+    HoverTool,
+)
 from bokeh.models.tickers import FixedTicker, BasicTicker
 
 
@@ -142,6 +148,7 @@ def plot_chloropleth(
     cbar_high_y,
     save_output=True,
     custom_ticks=None,
+    logColor=False,
 ):
     geosource = GeoJSONDataSource(geojson=json_map_df)
     if custom_ticks is not None:
@@ -152,8 +159,15 @@ def plot_chloropleth(
         cbar_ticker = BasicTicker()
         palette = bokeh.palettes.viridis(10)
     palette = palette[::-1]
-    # Map range of numbers to a colour palette
-    color_mapper = LinearColorMapper(palette=palette, low=cbar_low_y, high=cbar_high_y)
+    if logColor:
+        color_mapper = LogColorMapper(palette=palette, low=cbar_low_y, high=cbar_high_y)
+
+    else:
+        # Map range of numbers to a colour palette
+        color_mapper = LinearColorMapper(
+            palette=palette, low=cbar_low_y, high=cbar_high_y
+        )
+
     # Add a hover tooltip on final plot
     # expects a dictionary of hover fields items
     fields_tuple = list(hover_fields.items())
@@ -208,16 +222,26 @@ def plot_chloropleth(
 def setup_plots():
     print("Generating plots...")
     hover_fields_standard = {
+        "Date": "@Date",
         "Area": "@Area",
         "Average IMD": "@IMD",
-        "Cases": "@Cases",
-        "Date": "@Date",
+        "New cases": "@NewCases",
+        "Total cases": "@TotalCases",
+        "Cases per 100k": "@CasesPer100k",
+        "New deaths": "@NewDeaths",
+        "Total deaths": "@TotalDeaths",
+        "Deaths per 100k": "@DeathsPer100k",
     }
     hover_fields_imd_norm = {
+        "Date": "@Date",
         "Area": "@Area",
         "Normalised Average IMD": "@IMDNorm",
-        "Cases": "@Cases",
-        "Date": "@Date",
+        "New cases": "@NewCases",
+        "Total cases": "@TotalCases",
+        "Cases per 100k": "@CasesPer100k",
+        "New deaths": "@NewDeaths",
+        "Total deaths": "@TotalDeaths",
+        "Deaths per 100k": "@DeathsPer100k",
     }
 
     return hover_fields_standard, hover_fields_imd_norm

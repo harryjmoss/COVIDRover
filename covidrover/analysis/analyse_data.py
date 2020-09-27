@@ -24,12 +24,12 @@ def get_latest_data(merged_data):
         "Date",
         "Area",
         "Area code",
-        "New cases",
-        "Total cases",
-        "Cases Per 100k",
-        "New deaths",
-        "Total deaths",
-        "Deaths Per 100k",
+        "NewCases",
+        "TotalCases",
+        "CasesPer100k",
+        "NewDeaths",
+        "TotalDeaths",
+        "DeathsPer100k",
         "IMD",
         "IMDNorm",
     ]
@@ -51,8 +51,6 @@ def convert_to_json_out(geodf):
 def analyse(mapdata, stats, area_imd):
     print("Analysing data...")
     # Get a combined dataframe with cases info and IMD score
-    print(stats.columns)
-    print(area_imd.columns)
     stats_area_imd = merge_by_area(stats, area_imd)
     # Get the latest available UK Gov COVID stats for England
     latest_stats_imd = get_latest_data(stats_area_imd)
