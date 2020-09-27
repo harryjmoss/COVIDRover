@@ -1,14 +1,13 @@
 # test_dataprep
 import pandas as pd
 import numpy as np
+import json
 import geopandas, os, requests, pytest
 from covidrover.dataprep import get_data
 
 
 class TestRequests:
-    testurl_200 = (
-        "https://coronavirus.data.gov.uk/downloads/csv/coronavirus-cases_latest.csv"
-    )
+    testurl_200 = "https://api.coronavirus.data.gov.uk/v1/data?filters=areaType=nation;areaName=england&structure=%7B%22name%22:%22areaName%22%7D"
     testurl_404 = "https://github.com/404"
 
     @pytest.mark.parametrize(
@@ -65,11 +64,20 @@ class TestDataFames:
         assert df.columns.tolist() == expected_columns
 
     def test_get_latest_dataframes(self):
-        # use deaths url, file is much smaller
-        deaths_url = (
-            "https://coronavirus.data.gov.uk/downloads/csv/coronavirus-cases_latest.csv"
-        )
-        test_dataframe = get_data.get_latest_dataframes(deaths_url)
+        example_query = [
+            {
+                "date": "2020-09-27",
+                "name": "Aberdeen City",
+                "code": "S12000033",
+                "daily": 10,
+                "cumulative": 1309,
+                "caseRate": 572.4,
+                "newDeaths": None,
+                "cDeaths": 80,
+                "deathRate": 35,
+            }
+        ]
+        test_dataframe = get_data.get_latest_dataframes(example_query)
         assert not test_dataframe.empty
 
     def test_clean_deprivation_area_df(self):

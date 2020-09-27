@@ -93,9 +93,6 @@ def run_api_query(endpoint_url):
 
     query_filters = [f"areaType=ltla"]
 
-    # "new_deaths": "newDeaths28DaysByDeathDate",
-    #  "cumulative_deaths": "cumDeaths28DaysByDeathDate"
-
     query_structure = {
         "date": "date",
         "name": "areaName",
