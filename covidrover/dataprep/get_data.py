@@ -9,6 +9,8 @@ import json
 def get_latest_dataframes(json_out: list):
     # Get the latest available covid stats and read into pandas DataFrame
     dataframe = pd.read_json(json.dumps(json_out))
+    dataframe.columns = ['date', 'name', 'Area code', 'daily', 'cumulative', 'caseRate', 'newDeaths',
+       'cDeaths', 'deathRate']
     return dataframe
 
 def get_geo_data(geo_file):
@@ -27,14 +29,14 @@ def get_geomap_path(geopath,geo_url):
 
 def clean_deprivation_area_df(dep_df):
     dep_df=dep_df.iloc[:, : 3]
-    dep_df.columns=['code',
+    dep_df.columns=['Area code',
     'name',
     'IMD']
-    areaCodeList=dep_df['code'].str.rsplit(pat='/',n=1).tolist()
+    areaCodeList=dep_df['Area code'].str.rsplit(pat='/',n=1).tolist()
     areaCodeList=np.array(areaCodeList)
     areaCodeList=areaCodeList[:,-1]
-    dep_df['code']=areaCodeList
-    area_dep=dep_df[['code','IMD']]
+    dep_df['Area code']=areaCodeList
+    area_dep=dep_df[['Area code','IMD']]
     return area_dep
     
 def prepare_data(geo_path,endpoint_url,deaths_imd_deciles):
