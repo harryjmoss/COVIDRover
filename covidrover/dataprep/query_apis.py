@@ -9,8 +9,9 @@ FiltersType = Iterable[str]
 APIResponseType = Union[List[StructureType], str]
 
 
-def get_paginated_dataset(endpoint: str, filters: FiltersType, structure: StructureType,
-                          as_csv: bool = False) -> APIResponseType:
+def get_paginated_dataset(
+    endpoint: str, filters: FiltersType, structure: StructureType, as_csv: bool = False
+) -> APIResponseType:
     """
     Extracts paginated data by requesting all of the pages
     and combining the results.
@@ -38,7 +39,7 @@ def get_paginated_dataset(endpoint: str, filters: FiltersType, structure: Struct
     api_params = {
         "filters": str.join(";", filters),
         "structure": dumps(structure, separators=(",", ":")),
-        "format": "json" if not as_csv else "csv"
+        "format": "json" if not as_csv else "csv",
     }
 
     data = list()
@@ -52,14 +53,14 @@ def get_paginated_dataset(endpoint: str, filters: FiltersType, structure: Struct
         response = get(endpoint, params=api_params, timeout=1000)
 
         if response.status_code >= HTTPStatus.BAD_REQUEST:
-            raise RuntimeError(f'Request failed: {response.text}')
+            raise RuntimeError(f"Request failed: {response.text}")
         elif response.status_code == HTTPStatus.NO_CONTENT:
             break
 
         if as_csv:
             csv_content = response.content.decode()
 
-            # Removing CSV header (column names) where page 
+            # Removing CSV header (column names) where page
             # number is greater than 1.
             if page_number > 1:
                 data_lines = csv_content.split("\n")[1:]
@@ -70,8 +71,8 @@ def get_paginated_dataset(endpoint: str, filters: FiltersType, structure: Struct
             continue
 
         current_data = response.json()
-        page_data: List[StructureType] = current_data['data']
-        
+        page_data: List[StructureType] = current_data["data"]
+
         data.extend(page_data)
 
         # The "next" attribute in "pagination" will be `None`
@@ -87,16 +88,13 @@ def get_paginated_dataset(endpoint: str, filters: FiltersType, structure: Struct
     # Concatenating CSV pages
     return str.join("\n", data)
 
+
 def run_api_query(endpoint_url):
 
-    query_filters = [
-        f"areaType=utla"
-    ]
+    query_filters = [f"areaType=utla"]
 
-    
-       # "new_deaths": "newDeaths28DaysByDeathDate",
-      #  "cumulative_deaths": "cumDeaths28DaysByDeathDate"
-       
+    # "new_deaths": "newDeaths28DaysByDeathDate",
+    #  "cumulative_deaths": "cumDeaths28DaysByDeathDate"
 
     query_structure = {
         "date": "date",
@@ -107,8 +105,8 @@ def run_api_query(endpoint_url):
         "caseRate": "cumCasesBySpecimenDateRate",
         "newDeaths": "newDeaths28DaysByDeathDate",
         "cDeaths": "cumDeaths28DaysByDeathDate",
-        "deathRate": "cumDeaths28DaysByDeathDateRate"
+        "deathRate": "cumDeaths28DaysByDeathDateRate",
     }
 
-    json_data = get_paginated_dataset(endpoint_url,query_filters, query_structure)
+    json_data = get_paginated_dataset(endpoint_url, query_filters, query_structure)
     return json_data
