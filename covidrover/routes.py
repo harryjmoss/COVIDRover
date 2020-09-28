@@ -1,5 +1,5 @@
 """Routes for flask app"""
-# pylint: disable=C0301
+# pylint: disable=C0301,C0103,W0613
 from datetime import datetime
 from flask import render_template
 from flask import current_app as app
@@ -58,6 +58,6 @@ def bokeh_plot_imdnorm():
 
 
 @app.errorhandler(404)
-def page_not_found():
+def page_not_found(e):
     """Handle 404 errors"""
     return "<h1>404</h1><p>The resource could not be found.</p>", 404

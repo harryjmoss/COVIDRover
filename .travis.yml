@@ -27,4 +27,5 @@ install:
 script:
   - pytest --cov=covidrover tests/
   - pylint covidrover/
+  - black . --check
 after_success: codecov

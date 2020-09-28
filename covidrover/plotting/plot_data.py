@@ -45,7 +45,7 @@ def plot_2d_hist(
     # add a nice colour bar
     cbar = plt.colorbar(two_dim_hist[3], ax=axis)
     # set a label for the colour bar
-    cbar.axis.set_ylabel("Number of events", labelpad=15, rotation=270)
+    cbar.ax.set_ylabel("Number of events", labelpad=15, rotation=270)
     # sorts out padding, just aesthetic
     plt.tight_layout()
     output_file_name = "output/png/" + hist_title.title().replace(" ", "") + ".png"
