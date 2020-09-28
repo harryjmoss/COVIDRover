@@ -166,17 +166,28 @@ def test_geojson_generation():
 
 
 def test_setup_plots():
+
     expected_fields = {
+        "Date": "@Date",
         "Area": "@Area",
         "Average IMD": "@IMD",
-        "Cases": "@Cases",
-        "Date": "@Date",
+        "New cases": "@NewCases",
+        "Total cases": "@TotalCases",
+        "Cases per 100k": "@CasesPer100k",
+        "New deaths": "@NewDeaths",
+        "Total deaths": "@TotalDeaths",
+        "Deaths per 100k": "@DeathsPer100k",
     }
     expected_fields_norm = {
+        "Date": "@Date",
         "Area": "@Area",
         "Normalised Average IMD": "@IMDNorm",
-        "Cases": "@Cases",
-        "Date": "@Date",
+        "New cases": "@NewCases",
+        "Total cases": "@TotalCases",
+        "Cases per 100k": "@CasesPer100k",
+        "New deaths": "@NewDeaths",
+        "Total deaths": "@TotalDeaths",
+        "Deaths per 100k": "@DeathsPer100k",
     }
 
     returned_fields, returned_fields_norm = plot_data.setup_plots()

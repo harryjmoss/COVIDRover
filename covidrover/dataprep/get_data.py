@@ -1,14 +1,16 @@
+"""Module to collect data - run an API query, load data into pandas dataframes
+and set column names.
+"""
+import json
+import os
 import numpy as np
 import pandas as pd
 import geopandas as gpd
-import requests, os
-from io import StringIO
 from .query_apis import run_api_query
-import json
 
 
 def get_latest_dataframes(json_out: list):
-    # Get the latest available covid stats and read into pandas DataFrame
+    """Get the latest available covid stats and read into pandas DataFrame"""
     dataframe = pd.read_json(json.dumps(json_out))
     dataframe.columns = [
         "date",
@@ -25,13 +27,14 @@ def get_latest_dataframes(json_out: list):
 
 
 def get_geo_data(geo_file):
-    # geo_file can also be a url!
+    """Get the geographical file (can be a URL)"""
     geo_df = gpd.read_file(geo_file)
     return geo_df
 
 
 def get_geomap_path(geopath, geo_url):
-    if not (os.path.exists(geopath)):
+    """Get geographical information from a path"""
+    if not os.path.exists(geopath):
         print("Getting geographical information...")
         geo_dataframe = get_geo_data(geo_url)
         geo_dataframe = geo_dataframe[["lad19cd", "geometry"]]
@@ -41,17 +44,19 @@ def get_geomap_path(geopath, geo_url):
 
 
 def clean_deprivation_area_df(dep_df):
+    """Refactor IMD data in pandas dataframe"""
     dep_df = dep_df.iloc[:, :3]
     dep_df.columns = ["Area code", "name", "IMD"]
-    areaCodeList = dep_df["Area code"].str.rsplit(pat="/", n=1).tolist()
-    areaCodeList = np.array(areaCodeList)
-    areaCodeList = areaCodeList[:, -1]
-    dep_df["Area code"] = areaCodeList
+    area_code_list = dep_df["Area code"].str.rsplit(pat="/", n=1).tolist()
+    area_code_list = np.array(area_code_list)
+    area_code_list = area_code_list[:, -1]
+    dep_df["Area code"] = area_code_list
     area_dep = dep_df[["Area code", "IMD"]]
     return area_dep
 
 
 def prepare_data(geo_path, endpoint_url, deaths_imd_deciles):
+    """Prepare all input data"""
     print("Preparing input data...")
     geography = get_geo_data(geo_path)
     updated_df = get_latest_dataframes(run_api_query(endpoint_url))

@@ -1,3 +1,7 @@
+# pylint: disable=E1121,R0913,R0914
+"""Plotting functions to handle 2D histograms, line plots with
+error bands and chloropleth plots.
+"""
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -18,29 +22,30 @@ from bokeh.models.tickers import FixedTicker, BasicTicker
 def plot_2d_hist(
     geodataframe, hist_title, xvar, yvar, xbins, ybins, mincases=1, write_file=True
 ):
+    """Plot 2D hist of cases vs IMD"""
     # set up figure and axis objects
     plt.ioff()  # turn off interactive mode
     plt.figure()
-    ax = plt.gca()
+    axis = plt.gca()
     # Creates a right-hand axis with fractional size of ax and with fixed padding
     plt.figure(1)
-    ax = plt.gca()
+    axis = plt.gca()
     # get numpy arrays out of dataframe
     xdata = geodataframe[xvar].to_numpy()
     ydata = geodataframe[yvar].to_numpy()
     nbins = [xbins, ybins]
-    ax.set_yticks(ybins)
-    ax.set_xticks(xbins)
+    axis.set_yticks(ybins)
+    axis.set_xticks(xbins)
     # plot the 2d hist with the variables specified
-    two_dim_hist = ax.hist2d(xdata, ydata, bins=nbins, cmin=mincases, cmap="viridis")
+    two_dim_hist = axis.hist2d(xdata, ydata, bins=nbins, cmin=mincases, cmap="viridis")
     # label the axes
     plt.xlabel(xvar, fontsize=12)
     plt.ylabel(yvar, fontsize=12)
     plt.title(hist_title, fontsize=14)
     # add a nice colour bar
-    cbar = plt.colorbar(two_dim_hist[3], ax=ax)
+    cbar = plt.colorbar(two_dim_hist[3], ax=axis)
     # set a label for the colour bar
-    cbar.ax.set_ylabel("Number of events", labelpad=15, rotation=270)
+    cbar.axis.set_ylabel("Number of events", labelpad=15, rotation=270)
     # sorts out padding, just aesthetic
     plt.tight_layout()
     output_file_name = "output/png/" + hist_title.title().replace(" ", "") + ".png"
@@ -58,6 +63,7 @@ def plot_2d_hist(
 def plot_deaths_imd_decile(
     deaths_imd, hist_title, xaxis_label, yaxis_label, write_file=True
 ):
+    """Plot deaths by IMD decile"""
     # Sort the dataframe into All, Women, Men
     deaths_imd_all = deaths_imd[deaths_imd["Sex"].str.match("Persons")].drop(
         columns="Sex"
@@ -72,7 +78,7 @@ def plot_deaths_imd_decile(
     # set up figure and axis
     plt.figure(None, [10, 8])  # figure number, [width,height (inches)]
     plt.ioff()  # turn off interactive mode and stop matplotlib trying to display plots
-    ax = plt.gca()
+    axis = plt.gca()
 
     # Plot the lines of the mean fatality rate for All people, women and men
     # Also plot the 95% CI error band around the mean
@@ -122,9 +128,9 @@ def plot_deaths_imd_decile(
 
     # set title, ticks, labels
     plt.title(hist_title)
-    ax.set_ylabel(xaxis_label)
-    ax.set_xlabel(yaxis_label)
-    ax.set_xticks(np.arange(0, 11))
+    axis.set_ylabel(xaxis_label)
+    axis.set_xlabel(yaxis_label)
+    axis.set_xticks(np.arange(0, 11))
     plt.legend(loc="upper right")
 
     output_file_name = "output/png/" + hist_title.title().replace(" ", "") + ".png"
@@ -148,8 +154,9 @@ def plot_chloropleth(
     cbar_high_y,
     save_output=True,
     custom_ticks=None,
-    logColor=False,
+    log_color=False,
 ):
+    """Plot chloropleth plots"""
     geosource = GeoJSONDataSource(geojson=json_map_df)
     if custom_ticks is not None:
         # create colour bar with custom tick labels if provided
@@ -159,7 +166,7 @@ def plot_chloropleth(
         cbar_ticker = BasicTicker()
         palette = bokeh.palettes.viridis(10)
     palette = palette[::-1]
-    if logColor:
+    if log_color:
         color_mapper = LogColorMapper(palette=palette, low=cbar_low_y, high=cbar_high_y)
 
     else:
@@ -220,6 +227,7 @@ def plot_chloropleth(
 
 
 def setup_plots():
+    """Set up variables to include in chloropleth plots"""
     print("Generating plots...")
     hover_fields_standard = {
         "Date": "@Date",

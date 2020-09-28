@@ -1,16 +1,19 @@
+"""Analyse data collected, remove NaN values, get the latest data"""
 import numpy as np
 import pandas as pd
-import json
 
 
 def merge_by_area(leftdf, rightdf):
-    # merges covid info dataframe with deprivation scores
+    """Merges covid info dataframe with deprivation scores"""
 
     return pd.merge(leftdf, rightdf, how="inner", on="Area code")
 
 
 def get_latest_data(merged_data):
-    # Get the latest available data and only keep lower tier local authority entries
+    """Get latest available data, calculate variables
+    and rename fields
+    """
+    # Get the latest available data
     latestcases = merged_data[merged_data["date"] == merged_data["date"].max()]
     # Replace NaN values with zeros
     latestcases = latestcases.replace(np.nan, 0.0)
@@ -37,11 +40,7 @@ def get_latest_data(merged_data):
 
 
 def convert_to_json_out(geodf):
-    # Read geopandas dataframe in to json
-    # json_info = json.loads(geodf.to_json())
-    # Convert to a string-like object
-    # json_out = json.dumps(json_info)
-
+    """Read geopandas dataframe in to json"""
     # Convert datetime object to str for json serialization
     geodf["Date"] = geodf["Date"].astype(str)
     json_out = geodf.to_json()
@@ -49,6 +48,7 @@ def convert_to_json_out(geodf):
 
 
 def analyse(mapdata, stats, area_imd):
+    """Main data analysis function"""
     print("Analysing data...")
     # Get a combined dataframe with cases info and IMD score
     stats_area_imd = merge_by_area(stats, area_imd)

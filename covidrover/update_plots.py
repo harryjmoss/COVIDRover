@@ -1,31 +1,41 @@
+"""Main steering code for covidrover"""
+# pylint: disable=C0301,R0914
+import time
+from typing import List, Tuple, Dict
+import numpy as np
+from pandas import DataFrame
 from covidrover.dataprep import get_data
 from covidrover.analysis import analyse_data
 from covidrover.plotting import plot_data
-import numpy as np
-import time
 
 
-def run_covidrover():
-    start_timer = time.time()
-    # This file is retrieved in plot_data and saved to the data directory if it does not already exist
-    geopath = "data/geofiles/geofile.shp"
-    geo_url = "https://opendata.arcgis.com/datasets/a8531598f29f44e7ad455abb6bf59c60_0.geojson"
+def get_initial_data(
+    geopath: str, geo_url: str, endpoint_url: str, marmay_deaths_imd_deciles: str
+) -> List[DataFrame]:
+    """Gather initial data sources"""
+
     geomap_path = get_data.get_geomap_path(geopath, geo_url)
-
-    # UK Gov covid data:
-    endpoint_url = "https://api.coronavirus.data.gov.uk/v1/data"
-
-    # England & Wales mortality statistics by deprivation decile between March and May 2020
-    marmay_deaths_imd_deciles = "data/deaths_by_gender_deprivationDecile.csv"
-
     # Get the data
-    map_df, stats, areaIMD, deaths_imd = get_data.prepare_data(
+    map_df, stats, area_imd, deaths_imd = get_data.prepare_data(
         geomap_path, endpoint_url, marmay_deaths_imd_deciles
     )
-    # Prepare the data, combine and calculate variables to plot
-    stats_maps, stats_maps_json = analyse_data.analyse(map_df, stats, areaIMD)
+    return [map_df, stats, area_imd, deaths_imd]
 
-    # Plot the data!
+
+def run_data_analysis(initial_data: DataFrame) -> Tuple[DataFrame, str]:
+    """Perform some basic data analysis and combine data sources"""
+    maps, stats, area_imd = initial_data[0:-1]
+    # Prepare the data, combine and calculate variables to plot
+    stats_maps, stats_maps_json = analyse_data.analyse(maps, stats, area_imd)
+
+    return (stats_maps, stats_maps_json)
+
+
+def make_plots(
+    stats_maps: DataFrame, stats_maps_json: DataFrame, deaths_imd: DataFrame
+) -> Tuple[List, Dict]:
+    """Plot the data!"""
+
     # Sets up the hover fields for the chloropleth map plots
     hover_fields, hover_fields_norm = plot_data.setup_plots()
 
@@ -119,8 +129,32 @@ def run_covidrover():
     ]
 
     imgfiles = {"2D_Hist": histarrays, "Deaths_Decile": deaths_decile_plot}
+    return (bokehfiles, imgfiles)
+
+
+def run_covidrover():
+    """Steering code to run the main program"""
+    start_timer = time.time()
+
+    # File retrieved in plot_data, saved to the data directory if it doesn't exist
+    geopath = "data/geofiles/geofile.shp"
+    geo_url = "https://opendata.arcgis.com/datasets/a8531598f29f44e7ad455abb6bf59c60_0.geojson"
+    # UK Gov covid data:
+    endpoint_url = "https://api.coronavirus.data.gov.uk/v1/data"
+    # England & Wales mortality statistics by deprivation decile between March and May 2020
+    marmay_deaths_imd_deciles = "data/deaths_by_gender_deprivationDecile.csv"
+
+    initial_data = get_initial_data(
+        geopath, geo_url, endpoint_url, marmay_deaths_imd_deciles
+    )
+    deaths_imd: DataFrame = initial_data[-1]
+
+    stats_maps, stats_maps_json = run_data_analysis(initial_data)
+
+    out_plots = make_plots(stats_maps, stats_maps_json, deaths_imd)
+
     print("--- Finished running in %s seconds ---" % (time.time() - start_timer))
-    return bokehfiles, imgfiles
+    return out_plots
 
 
 if __name__ == "__main__":

@@ -1,9 +1,12 @@
+# pylint: disable=C0415
+"""Defines flask app"""
+from datetime import datetime
 from flask import Flask
 from flask_bootstrap import Bootstrap
-from datetime import datetime
 
 
 def create_app(dev=False):
+    """Create app and return app object"""
     app = Flask(__name__)
     Bootstrap(app)
 
@@ -28,7 +31,7 @@ def create_app(dev=False):
             print("Running covidrover plots setup!")
             # don't do anything with the bokeh plots or image filepaths
             # to-do
-            _bokeh, _imgs = update_plots.run_covidrover()
+            _out_plots = update_plots.run_covidrover()
             app.last_update = routes.update_timer()
 
         return app

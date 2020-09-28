@@ -1,7 +1,12 @@
+# pylint: disable=C0114,W0105,R1720
+"""Module to query UK gov COVID API and paginate the results.
+Largely based on the documentation available
+at: https://coronavirus.data.gov.uk/developers-guide
+"""
 from typing import Iterable, Dict, Union, List
 from json import dumps
-from requests import get
 from http import HTTPStatus
+from requests import get
 
 
 StructureType = Dict[str, Union[dict, str]]
@@ -90,8 +95,8 @@ def get_paginated_dataset(
 
 
 def run_api_query(endpoint_url):
-
-    query_filters = [f"areaType=ltla"]
+    """Set parameters for the API query"""
+    query_filters = ["areaType=ltla"]
 
     query_structure = {
         "date": "date",
