@@ -1,4 +1,4 @@
-# pylint: disable=E1121,R0913,R0914
+# pylint: disable=C0330,E1121,R0913,R0914
 """Plotting functions to handle 2D histograms, line plots with
 error bands and chloropleth plots.
 """
