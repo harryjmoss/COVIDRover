@@ -1,5 +1,5 @@
 """Main steering code for covidrover"""
-# pylint: disable=C0301,C0330,R0914
+# pylint: disable=C0301,C0330,R0914,E0012
 import time
 from typing import List, Tuple, Dict
 import numpy as np

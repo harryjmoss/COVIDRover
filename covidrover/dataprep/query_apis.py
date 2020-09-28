@@ -1,4 +1,4 @@
-# pylint: disable=C0114,C0330,W0105,R1720
+# pylint: disable=C0114,C0330,W0105,R1720,E0012
 """Module to query UK gov COVID API and paginate the results.
 Largely based on the documentation available
 at: https://coronavirus.data.gov.uk/developers-guide
