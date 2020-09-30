@@ -3,23 +3,42 @@ import pandas as pd
 import numpy as np
 import json
 import geopandas, os, requests, pytest
-from covidrover.dataprep import get_data
+from covidrover.dataprep import get_data, query_apis
 
 
 class TestRequests:
-    testurl_200 = "https://api.coronavirus.data.gov.uk/v1/data?filters=areaType=nation;areaName=england&structure=%7B%22name%22:%22areaName%22%7D"
+
+    testurl_200 = "https://api.coronavirus.data.gov.uk/v1/data"
     testurl_404 = "https://github.com/404"
 
+    filters = ["areaType=nation", "areaName=england"]
+    structure = {"name": "areaName"}
+
     @pytest.mark.parametrize(
-        "input,expected",
+        "invalue,expected",
         [
             (testurl_200, 200),
             (testurl_404, 404),
         ],
     )
-    def test_request(self, input, expected):
-        csvtext = requests.get(input)
+    def test_request(self, invalue, expected):
+        """Test requests are working as expected generally"""
+        csvtext = requests.get(invalue)
         assert csvtext.status_code == expected
+
+    def test_good_response(self):
+        """Test that basic API query produces some positive result"""
+        result = query_apis.run_api_query(
+            self.testurl_200, self.filters, self.structure
+        )
+        assert result is not None
+        assert isinstance(result, list)
+        assert len(result) >= 1
+
+    def test_bad_response(self):
+        """Test that a bad API request fails gracefully"""
+        with pytest.raises(RuntimeError):
+            query_apis.run_api_query(self.testurl_404, self.filters, self.structure)
 
 
 class TestFilesExist:
