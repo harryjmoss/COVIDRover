@@ -1,6 +1,10 @@
 MIT License
 
-Copyright (c) 2020 Harry Moss
+Copyright (c) 2020 Harry Moss for the majority of the python code and the entirety of the flask app within project COVIDRover.
+
+Contains public sector information licensed under the Open Government Licence v3.0: https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
+Data sources used are (c) 2020 Crown copyright, made available under the Open government licence v3.0.
+UK Gov API request code (c) 2020 Crown copyright, made available under the Open government licence v3.0.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

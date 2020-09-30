@@ -24,5 +24,8 @@ jobs:
 install: 
   - pip3 install -r requirements.txt # pip3 is OS independent
   - python setup.py -q install
-script: pytest --cov=covidrover tests/
+script:
+  - pytest --cov=covidrover tests/
+  - pylint covidrover/
+  - black . --check
 after_success: codecov
