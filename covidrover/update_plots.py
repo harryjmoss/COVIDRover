@@ -3,11 +3,19 @@
 import time
 from typing import List, Tuple, Dict
 import numpy as np
+import gc
+from bokeh.io import curdoc, state, reset_output
 from pandas import DataFrame
 from covidrover.dataprep import get_data
 from covidrover.analysis import analyse_data
 from covidrover.plotting import plot_data
 
+def clear_bokeh_memory():
+    curdoc().clear()
+    state.State().reset()
+    reset_output()
+    gc.collect()
+    return
 
 def get_initial_data(
     geopath: str, geo_url: str, endpoint_url: str, marmay_deaths_imd_deciles: str
@@ -29,7 +37,6 @@ def run_data_analysis(initial_data: DataFrame) -> Tuple[DataFrame, str]:
     stats_maps, stats_maps_json = analyse_data.analyse(maps, stats, area_imd)
 
     return (stats_maps, stats_maps_json)
-
 
 def make_plots(
     stats_maps: DataFrame, stats_maps_json: DataFrame, deaths_imd: DataFrame
@@ -56,6 +63,7 @@ def make_plots(
         True,
         custom_ticks=np.arange(0, 12000, 1000),
     )
+    clear_bokeh_memory()
     case_rate_plot = plot_data.plot_chloropleth(
         stats_maps_json,
         "CasesPer100k",
@@ -66,6 +74,8 @@ def make_plots(
         True,
         custom_ticks=np.arange(0, 2000, 250),
     )
+    clear_bokeh_memory()   
+    
     deaths_area_plot = plot_data.plot_chloropleth(
         stats_maps_json,
         "TotalDeaths",
@@ -76,6 +86,7 @@ def make_plots(
         True,
         custom_ticks=np.arange(0, 1200, 100),
     )
+    clear_bokeh_memory()
     death_rate_plot = plot_data.plot_chloropleth(
         stats_maps_json,
         "DeathsPer100k",
@@ -86,6 +97,7 @@ def make_plots(
         True,
         custom_ticks=np.arange(0, 200, 25),
     )
+    clear_bokeh_memory()
     imd_area_plot = plot_data.plot_chloropleth(
         stats_maps_json,
         "IMD",
@@ -95,6 +107,7 @@ def make_plots(
         50,
         True,
     )
+    clear_bokeh_memory()
     imd_norm_area_plot = plot_data.plot_chloropleth(
         stats_maps_json,
         "IMDNorm",
@@ -104,6 +117,7 @@ def make_plots(
         1,
         True,
     )
+    clear_bokeh_memory()
 
     deaths_decile_imd_title = "COVID-19 Mortality per 100000 People by Deprivation Decile between March and May 2020"
     deaths_decile_imd_xaxis_label = (
