@@ -56,16 +56,16 @@ def make_plots(
         stats_maps, title_hist2d, "IMD", "TotalCases", xbins, ybins
     )
 
-    cases_area_plot = plot_data.plot_chloropleth(
-        stats_maps_json,
-        "TotalCases",
-        "Positive COVID-19 PCR tests By Area in England by specimen date",
-        hover_fields,
-        0,
-        12000,
-        True,
-        custom_ticks=np.arange(0, 12000, 2000),
-    )
+    #cases_area_plot = plot_data.plot_chloropleth(
+    #    stats_maps_json,
+    #    "TotalCases",
+    #    "Positive COVID-19 PCR tests By Area in England by specimen date",
+    #    hover_fields,
+    #    0,
+    #    12000,
+    #    True,
+    #    custom_ticks=np.arange(0, 12000, 2000),
+    #)
 
     clear_bokeh_memory()
     case_rate_plot = plot_data.plot_chloropleth(
