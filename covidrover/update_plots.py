@@ -64,7 +64,7 @@ def make_plots(
         0,
         12000,
         True,
-        custom_ticks=np.arange(0, 12000, 1000),
+        custom_ticks=np.arange(0, 12000, 2000),
     )
 
     clear_bokeh_memory()
