@@ -147,7 +147,6 @@ def plot_deaths_imd_decile(
     gc.collect()
     return web_file_name
 
-
 def plot_chloropleth(
     json_map_df,
     plotfield,

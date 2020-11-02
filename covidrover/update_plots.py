@@ -17,6 +17,7 @@ def clear_bokeh_memory():
     gc.collect()
     return
 
+
 def get_initial_data(
     geopath: str, geo_url: str, endpoint_url: str, marmay_deaths_imd_deciles: str
 ) -> List[DataFrame]:
@@ -30,6 +31,7 @@ def get_initial_data(
     return [map_df, stats, area_imd, deaths_imd]
 
 
+
 def run_data_analysis(initial_data: DataFrame) -> Tuple[DataFrame, str]:
     """Perform some basic data analysis and combine data sources"""
     maps, stats, area_imd = initial_data[0:-1]
@@ -37,6 +39,7 @@ def run_data_analysis(initial_data: DataFrame) -> Tuple[DataFrame, str]:
     stats_maps, stats_maps_json = analyse_data.analyse(maps, stats, area_imd)
 
     return (stats_maps, stats_maps_json)
+
 
 def make_plots(
     stats_maps: DataFrame, stats_maps_json: DataFrame, deaths_imd: DataFrame
