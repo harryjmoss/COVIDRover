@@ -62,10 +62,11 @@ def make_plots(
         "Positive COVID-19 PCR tests By Area in England by specimen date",
         hover_fields,
         0,
-        4000,
+        12000,
         True,
         custom_ticks=np.arange(0, 12000, 1000),
     )
+
     clear_bokeh_memory()
     case_rate_plot = plot_data.plot_chloropleth(
         stats_maps_json,
