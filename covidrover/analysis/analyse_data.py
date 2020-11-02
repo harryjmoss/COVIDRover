@@ -3,13 +3,15 @@ import numpy as np
 import pandas as pd
 
 
-def merge_by_area(leftdf, rightdf):
+def merge_by_area(leftdf: pd.DataFrame, rightdf: pd.DataFrame
+) -> pd.DataFrame:
     """Merges covid info dataframe with deprivation scores"""
 
     return pd.merge(leftdf, rightdf, how="inner", on="Area code")
 
 
-def get_latest_data(merged_data):
+def get_latest_data(merged_data: pd.DataFrame
+) -> pd.DataFrame:
     """Get latest available data, calculate variables
     and rename fields
     """
@@ -39,7 +41,8 @@ def get_latest_data(merged_data):
     return latestcases
 
 
-def convert_to_json_out(geodf):
+def convert_to_json_out(geodf: pd.DataFrame
+) -> str:
     """Read geopandas dataframe in to json"""
     # Convert datetime object to str for json serialization
     geodf["Date"] = geodf["Date"].astype(str)

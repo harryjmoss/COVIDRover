@@ -32,7 +32,7 @@ def get_initial_data(
 
 
 
-def run_data_analysis(initial_data: DataFrame) -> Tuple[DataFrame, str]:
+def run_data_analysis(initial_data: List) -> Tuple[DataFrame, str]:
     """Perform some basic data analysis and combine data sources"""
     maps, stats, area_imd = initial_data[0:-1]
     # Prepare the data, combine and calculate variables to plot
@@ -41,14 +41,11 @@ def run_data_analysis(initial_data: DataFrame) -> Tuple[DataFrame, str]:
     return (stats_maps, stats_maps_json)
 
 
-def make_plots(
-    stats_maps: DataFrame, stats_maps_json: DataFrame, deaths_imd: DataFrame
+
+def make_std_plots(
+    stats_maps: DataFrame, deaths_imd: DataFrame
 ) -> Tuple[List, Dict]:
     """Plot the data!"""
-
-    # Sets up the hover fields for the chloropleth map plots
-    hover_fields, hover_fields_norm = plot_data.setup_plots()
-
     xbins = np.arange(0, 55, 5)
     ybins = np.arange(0, 4000, 500)
     title_hist2d = "Frequency of case numbers as a function of IMD"
@@ -56,16 +53,41 @@ def make_plots(
         stats_maps, title_hist2d, "IMD", "TotalCases", xbins, ybins
     )
 
-    #cases_area_plot = plot_data.plot_chloropleth(
-    #    stats_maps_json,
-    #    "TotalCases",
-    #    "Positive COVID-19 PCR tests By Area in England by specimen date",
-    #    hover_fields,
-    #    0,
-    #    12000,
-    #    True,
-    #    custom_ticks=np.arange(0, 12000, 2000),
-    #)
+    deaths_decile_imd_title = "COVID-19 Mortality per 100000 People by Deprivation Decile between March and May 2020"
+    deaths_decile_imd_xaxis_label = (
+        "COVID-19 mortality rate per 100000 people (2018 pop. estimate)"
+    )
+    deaths_decile_imd_yaxis_label = (
+        "Deprivation decile (1: most deprived, 10: least deprived)"
+    )
+    deaths_decile_plot = plot_data.plot_deaths_imd_decile(
+        deaths_imd,
+        deaths_decile_imd_title,
+        deaths_decile_imd_xaxis_label,
+        deaths_decile_imd_yaxis_label,
+    )
+    imgfiles = {"2D_Hist": histarrays, "Deaths_Decile": deaths_decile_plot}
+    return (imgfiles)
+
+def plot_chloropleths(
+    stats_maps_json: str
+) -> List:
+    """Plot the data!"""
+
+
+    # Sets up the hover fields for the chloropleth map plots
+    hover_fields, hover_fields_norm = plot_data.setup_plots()
+
+    cases_area_plot = plot_data.plot_chloropleth(
+        stats_maps_json,
+        "TotalCases",
+        "Positive COVID-19 PCR tests By Area in England by specimen date",
+        hover_fields,
+        0,
+        12000,
+        True,
+        custom_ticks=np.arange(0, 12000, 2000),
+    )
 
     clear_bokeh_memory()
     case_rate_plot = plot_data.plot_chloropleth(
@@ -123,20 +145,7 @@ def make_plots(
     )
     clear_bokeh_memory()
 
-    deaths_decile_imd_title = "COVID-19 Mortality per 100000 People by Deprivation Decile between March and May 2020"
-    deaths_decile_imd_xaxis_label = (
-        "COVID-19 mortality rate per 100000 people (2018 pop. estimate)"
-    )
-    deaths_decile_imd_yaxis_label = (
-        "Deprivation decile (1: most deprived, 10: least deprived)"
-    )
-    deaths_decile_plot = plot_data.plot_deaths_imd_decile(
-        deaths_imd,
-        deaths_decile_imd_title,
-        deaths_decile_imd_xaxis_label,
-        deaths_decile_imd_yaxis_label,
-    )
-
+   
     bokehfiles = [
         cases_area_plot,
         case_rate_plot,
@@ -146,8 +155,7 @@ def make_plots(
         imd_norm_area_plot,
     ]
 
-    imgfiles = {"2D_Hist": histarrays, "Deaths_Decile": deaths_decile_plot}
-    return (bokehfiles, imgfiles)
+    return bokehfiles
 
 
 def run_covidrover():
@@ -169,10 +177,11 @@ def run_covidrover():
 
     stats_maps, stats_maps_json = run_data_analysis(initial_data)
 
-    out_plots = make_plots(stats_maps, stats_maps_json, deaths_imd)
+    make_std_plots(stats_maps, deaths_imd)
+    plot_chloropleths(stats_maps_json)
 
     print("--- Finished running in %s seconds ---" % (time.time() - start_timer))
-    return out_plots
+    return
 
 
 if __name__ == "__main__":
