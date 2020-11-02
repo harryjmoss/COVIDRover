@@ -10,6 +10,7 @@ from covidrover.dataprep import get_data
 from covidrover.analysis import analyse_data
 from covidrover.plotting import plot_data
 
+
 def clear_bokeh_memory():
     curdoc().clear()
     state.State().reset()
@@ -31,7 +32,6 @@ def get_initial_data(
     return [map_df, stats, area_imd, deaths_imd]
 
 
-
 def run_data_analysis(initial_data: List) -> Tuple[DataFrame, str]:
     """Perform some basic data analysis and combine data sources"""
     maps, stats, area_imd = initial_data[0:-1]
@@ -41,10 +41,7 @@ def run_data_analysis(initial_data: List) -> Tuple[DataFrame, str]:
     return (stats_maps, stats_maps_json)
 
 
-
-def make_std_plots(
-    stats_maps: DataFrame, deaths_imd: DataFrame
-) -> Tuple[List, Dict]:
+def make_std_plots(stats_maps: DataFrame, deaths_imd: DataFrame) -> Tuple[List, Dict]:
     """Plot the data!"""
     xbins = np.arange(0, 55, 5)
     ybins = np.arange(0, 4000, 500)
@@ -67,13 +64,11 @@ def make_std_plots(
         deaths_decile_imd_yaxis_label,
     )
     imgfiles = {"2D_Hist": histarrays, "Deaths_Decile": deaths_decile_plot}
-    return (imgfiles)
+    return imgfiles
 
-def plot_chloropleths(
-    stats_maps_json: str
-) -> List:
+
+def plot_chloropleths(stats_maps_json: str) -> List:
     """Plot the data!"""
-
 
     # Sets up the hover fields for the chloropleth map plots
     hover_fields, hover_fields_norm = plot_data.setup_plots()
@@ -100,8 +95,8 @@ def plot_chloropleths(
         True,
         custom_ticks=np.arange(0, 2000, 250),
     )
-    clear_bokeh_memory()   
-    
+    clear_bokeh_memory()
+
     deaths_area_plot = plot_data.plot_chloropleth(
         stats_maps_json,
         "TotalDeaths",
@@ -145,7 +140,6 @@ def plot_chloropleths(
     )
     clear_bokeh_memory()
 
-   
     bokehfiles = [
         cases_area_plot,
         case_rate_plot,

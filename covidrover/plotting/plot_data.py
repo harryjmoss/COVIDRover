@@ -5,6 +5,7 @@ error bands and chloropleth plots.
 import numpy as np
 import matplotlib.pyplot as plt
 import gc
+
 # bokeh imports...
 from bokeh.io import output_file, save, curdoc, state, reset_output
 
@@ -147,6 +148,7 @@ def plot_deaths_imd_decile(
     gc.collect()
     return web_file_name
 
+
 def plot_chloropleth(
     json_map_df,
     plotfield,
@@ -225,7 +227,7 @@ def plot_chloropleth(
     if save_output:
         output_file(outfile_name)
         save(map_plot)
-    bokeh.io.curdoc().clear()  
+    bokeh.io.curdoc().clear()
     bokeh.io.state.State().reset()
     bokeh.io.reset_output()
     gc.collect()
