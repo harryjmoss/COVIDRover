@@ -2,12 +2,12 @@
 """Plotting functions to handle 2D histograms, line plots with
 error bands and chloropleth plots.
 """
+import gc
 import numpy as np
 import matplotlib.pyplot as plt
-import gc
 
 # bokeh imports...
-from bokeh.io import output_file, save, curdoc, state, reset_output
+from bokeh.io import output_file, save
 
 from bokeh.plotting import figure
 import bokeh.palettes

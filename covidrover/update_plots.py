@@ -2,8 +2,8 @@
 # pylint: disable=C0301,R0914
 import time
 from typing import List, Tuple, Dict
-import numpy as np
 import gc
+import numpy as np
 from bokeh.io import curdoc, state, reset_output
 from pandas import DataFrame
 from covidrover.dataprep import get_data
@@ -12,11 +12,13 @@ from covidrover.plotting import plot_data
 
 
 def clear_bokeh_memory():
+    """Run garbage collection after bokeh plots in
+    an attempt to reduce memory usage
+    """
     curdoc().clear()
     state.State().reset()
     reset_output()
     gc.collect()
-    return
 
 
 def get_initial_data(
@@ -175,7 +177,7 @@ def run_covidrover():
     plot_chloropleths(stats_maps_json)
 
     print("--- Finished running in %s seconds ---" % (time.time() - start_timer))
-    return
+    return make_std_plots, plot_chloropleths
 
 
 if __name__ == "__main__":
