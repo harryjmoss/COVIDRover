@@ -137,7 +137,8 @@ def test_convert_to_json_out():
                 494.5,
                 40.46,
             ],
-        ]
+        ],
+        dtype=object,
     ).tolist()
     columns_list = [
         "Geography",

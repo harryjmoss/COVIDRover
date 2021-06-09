@@ -2,11 +2,13 @@
 """Plotting functions to handle 2D histograms, line plots with
 error bands and chloropleth plots.
 """
+import gc
 import numpy as np
 import matplotlib.pyplot as plt
 
 # bokeh imports...
 from bokeh.io import output_file, save
+
 from bokeh.plotting import figure
 import bokeh.palettes
 from bokeh.models import (
@@ -56,7 +58,8 @@ def plot_2d_hist(
     if write_file:
         plt.savefig(output_file_name, dpi=300)
         plt.savefig(web_file_name, dpi=300)
-
+    plt.close()
+    gc.collect()
     return web_file_name
 
 
@@ -141,7 +144,8 @@ def plot_deaths_imd_decile(
     if write_file:
         plt.savefig(output_file_name, dpi=300)
         plt.savefig(web_file_name, dpi=300)
-
+    plt.close()
+    gc.collect()
     return web_file_name
 
 
@@ -223,6 +227,10 @@ def plot_chloropleth(
     if save_output:
         output_file(outfile_name)
         save(map_plot)
+    bokeh.io.curdoc().clear()
+    bokeh.io.state.State().reset()
+    bokeh.io.reset_output()
+    gc.collect()
     return outfile_name
 
 
