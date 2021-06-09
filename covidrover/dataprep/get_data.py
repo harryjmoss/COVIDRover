@@ -60,8 +60,9 @@ def prepare_data(geo_path, endpoint_url, deaths_imd_deciles):
     """Prepare all input data"""
     print("Preparing input data...")
     geography = get_geo_data(geo_path)
-    query_filters: List = ["areaType=ltla"]
-    query_structure: Dict = {
+    query_filters = ["areaType=ltla"]
+
+    query_structure = {
         "date": "date",
         "name": "areaName",
         "code": "areaCode",
@@ -72,9 +73,7 @@ def prepare_data(geo_path, endpoint_url, deaths_imd_deciles):
         "cDeaths": "cumDeaths28DaysByDeathDate",
         "deathRate": "cumDeaths28DaysByDeathDateRate",
     }
-    updated_df = get_latest_dataframes(
-        run_api_query(endpoint_url, query_filters, query_structure)
-    )
+    updated_df = run_api_query(query_filters, query_structure)
 
     deaths_imd = pd.read_csv(deaths_imd_deciles)
     local_area_deprivation = "data/deprivation_index_by_area.csv"

@@ -8,37 +8,23 @@ from covidrover.dataprep import get_data, query_apis
 
 class TestRequests:
 
-    testurl_200 = "https://api.coronavirus.data.gov.uk/v1/data"
-    testurl_404 = "https://github.com/404"
-
-    filters = ["areaType=nation", "areaName=england"]
-    structure = {"name": "areaName"}
-
-    @pytest.mark.parametrize(
-        "invalue,expected",
-        [
-            (testurl_200, 200),
-            (testurl_404, 404),
-        ],
-    )
-    def test_request(self, invalue, expected):
-        """Test requests are working as expected generally"""
-        csvtext = requests.get(invalue)
-        assert csvtext.status_code == expected
+    filters = ["areaType=nation", "areaName=England"]
+    structure={"newCasesByPublishDate": "newCasesByPublishDate"}
+    bad_filters = ["foo=bar"]
 
     def test_good_response(self):
         """Test that basic API query produces some positive result"""
         result = query_apis.run_api_query(
-            self.testurl_200, self.filters, self.structure
+            self.filters, self.structure
         )
         assert result is not None
-        assert isinstance(result, list)
+        assert isinstance(result, pd.DataFrame)
         assert len(result) >= 1
 
     def test_bad_response(self):
         """Test that a bad API request fails gracefully"""
         with pytest.raises(RuntimeError):
-            query_apis.run_api_query(self.testurl_404, self.filters, self.structure)
+            query_apis.run_api_query(self.bad_filters, self.structure)
 
 
 class TestFilesExist:
