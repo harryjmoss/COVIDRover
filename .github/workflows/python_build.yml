@@ -37,7 +37,6 @@ jobs:
           python setup.py -q install
       - name: Run static tests
         run: |
-          pylint covidrover/
           black . --check
       - name: Run pytest
         run: pytest tests/

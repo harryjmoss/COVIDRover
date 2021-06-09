@@ -9,14 +9,12 @@ from covidrover.dataprep import get_data, query_apis
 class TestRequests:
 
     filters = ["areaType=nation", "areaName=England"]
-    structure={"newCasesByPublishDate": "newCasesByPublishDate"}
+    structure = {"newCasesByPublishDate": "newCasesByPublishDate"}
     bad_filters = ["foo=bar"]
 
     def test_good_response(self):
         """Test that basic API query produces some positive result"""
-        result = query_apis.run_api_query(
-            self.filters, self.structure
-        )
+        result = query_apis.run_api_query(self.filters, self.structure)
         assert result is not None
         assert isinstance(result, pd.DataFrame)
         assert len(result) >= 1

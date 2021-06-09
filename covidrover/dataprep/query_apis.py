@@ -13,11 +13,10 @@ StructureType = Dict[str, Union[dict, str]]
 FiltersType = Iterable[str]
 APIResponseType = Union[List[StructureType], str]
 
-def run_api_query(
-    query_filters: List, query_structure: Dict
-) -> List:
+
+def run_api_query(query_filters: List, query_structure: Dict) -> List:
     """Set parameters for the API query"""
     api = Cov19API(filters=query_filters, structure=query_structure)
     dataframe = api.get_dataframe()
-    #json_data = get_paginated_dataset(endpoint_url, query_filters, query_structure)
+    # json_data = get_paginated_dataset(endpoint_url, query_filters, query_structure)
     return dataframe
